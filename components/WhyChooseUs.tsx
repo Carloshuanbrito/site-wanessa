@@ -1,37 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ThermometerSun, Layers, ShieldCheck, Zap, Globe, Clock, Award } from 'lucide-react';
+import { ThermometerSun, Layers, ShieldCheck, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // <--- Importante
 
 const WhyChooseUs: React.FC = () => {
-    // Bento Grid Items
+    const { t } = useTranslation(); // <--- Hook
+
     const items = [
         {
-            title: "Câmara Aquecida 80°C",
-            desc: "Ambiente controlado que elimina empenamento (warping) em peças grandes de ABS e ASA.",
+            title: t('why.items.0.title'),
+            desc: t('why.items.0.desc'),
             icon: ThermometerSun,
             colSpan: "md:col-span-2",
             bg: "bg-slate-900 text-white",
             iconColor: "text-brand-400"
         },
         {
-            title: "Orçamento em 24h",
-            desc: "Receba análise técnica e preço rapidamente.",
+            title: t('why.items.1.title'),
+            desc: t('why.items.1.desc'),
             icon: Clock,
             colSpan: "md:col-span-1",
             bg: "bg-white border border-slate-200",
             iconColor: "text-brand-600"
         },
         {
-            title: "Isotropia Z-Axis",
-            desc: "Fusão química de camadas superior, garantindo resistência mecânica em todas as direções.",
+            title: t('why.items.2.title'),
+            desc: t('why.items.2.desc'),
             icon: Layers,
             colSpan: "md:col-span-1",
             bg: "bg-brand-50 border border-brand-100",
             iconColor: "text-brand-600"
         },
         {
-            title: "Materiais Reais",
-            desc: "Processamos PEEK, Carbon Fiber e Nylon sem tensões internas.",
+            title: t('why.items.3.title'),
+            desc: t('why.items.3.desc'),
             icon: ShieldCheck,
             colSpan: "md:col-span-2",
             bg: "bg-white border border-slate-200",
@@ -42,17 +44,16 @@ const WhyChooseUs: React.FC = () => {
     return (
         <section id="servicos" className="py-24 bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
                     >
-                        Engenharia Aditiva <span className="text-brand-600">de Precisão</span>
+                        {t('why.title')} <span className="text-brand-600">{t('why.title_highlight')}</span>
                     </motion.h2>
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                        Superamos as limitações da impressão 3D convencional com hardware industrial e controle de processo rigoroso.
+                        {t('why.subtitle')}
                     </p>
                 </div>
 
@@ -74,8 +75,6 @@ const WhyChooseUs: React.FC = () => {
                                     {item.desc}
                                 </p>
                             </div>
-
-                            {/* Efeito decorativo no hover */}
                             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-current opacity-5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
                         </motion.div>
                     ))}

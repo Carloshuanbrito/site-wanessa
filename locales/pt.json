@@ -1,0 +1,134 @@
+{
+    "navbar": {
+        "materials": "Materiais",
+        "tech": "Tecnologia",
+        "services": "Serviços",
+        "cta": "Cotar Agora"
+    },
+    "hero": {
+        "badge": "H2D Systems v4.0",
+        "title_main": "Engenharia",
+        "title_gradient": "Materializada.",
+        "description": "Do CAD à peça final em compósitos de alta performance. Câmaras de 350°C para imprimir o impossível.",
+        "cta_primary": "Iniciar Projeto",
+        "cta_secondary": "Ver Materiais",
+        "stat_quote": "Cotação",
+        "stat_temp": "Temp. Hotend",
+        "stat_quality": "Qualidade",
+        "float_card_label": "Material",
+        "float_card_value": "Carbon Fiber",
+        "img_label": "Produção Ativa",
+        "img_desc": "Impressão de Polímeros Avançados"
+    },
+    "materials": {
+        "header_title": "Catálogo de",
+        "header_highlight": "Materiais Avançados.",
+        "header_desc": "Selecione a categoria e visualize as opções disponíveis para sua aplicação.",
+        "btn_datasheet": "Ver tabela de propriedades",
+        "recommended": "Recomendado",
+        "general": {
+            "title": "Prototipagem Rápida",
+            "desc": "Materiais de excelente custo-benefício e acabamento visual para validação de forma e maquetes.",
+            "items": [
+                {
+                    "name": "PLA Premium",
+                    "desc": "Ótimo acabamento superficial para modelos visuais. Fácil impressão."
+                },
+                {
+                    "name": "PETG Translúcido",
+                    "desc": "Boa resistência mecânica e leve flexibilidade. Ideal para recipientes."
+                },
+                {
+                    "name": "TPU (Flex A95)",
+                    "desc": "Elastômero com propriedades de borracha. Para vedações e amortecedores."
+                }
+            ]
+        },
+        "engineering": {
+            "title": "Grau de Engenharia",
+            "desc": "Polímeros técnicos robustos para substituir peças finais, suportando calor, impacto e atrito.",
+            "items": [
+                {
+                    "name": "ABS Industrial",
+                    "desc": "Padrão para peças duráveis. Boa resistência térmica (até 85°C)."
+                },
+                {
+                    "name": "ASA UV-Resist",
+                    "desc": "O 'ABS para área externa'. Não degrada nem amarela sob o sol."
+                },
+                {
+                    "name": "PC (Policarbonato)",
+                    "desc": "Extrema resistência a impacto e alta temperatura (110°C+)."
+                },
+                {
+                    "name": "Nylon PA12/PA6",
+                    "desc": "Tenacidade excepcional, baixo atrito e resistência química."
+                }
+            ]
+        },
+        "advanced": {
+            "title": "Alta Performance",
+            "desc": "O ápice da manufatura aditiva. Compósitos reforçados e superpolímeros para ambientes extremos.",
+            "items": [
+                {
+                    "name": "Carbon Fiber (PA-CF)",
+                    "desc": "Nylon reforçado com fibra de carbono. Rigidez estrutural máxima."
+                },
+                {
+                    "name": "Glass Fiber (PA-GF)",
+                    "desc": "Estabilidade dimensional superior e isolamento elétrico/térmico."
+                },
+                {
+                    "name": "PEEK / PPS",
+                    "desc": "Substituição de metal. Resiste a químicos agressivos, fogo e 200°C+."
+                }
+            ]
+        }
+    },
+    "why": {
+        "title": "Engenharia Aditiva",
+        "title_highlight": "de Precisão",
+        "subtitle": "Superamos as limitações da impressão 3D convencional com hardware industrial e controle de processo rigoroso.",
+        "items": [
+            {
+                "title": "Câmara Aquecida 80°C",
+                "desc": "Ambiente controlado que elimina empenamento (warping) em peças grandes de ABS e ASA."
+            },
+            {
+                "title": "Orçamento em 24h",
+                "desc": "Receba análise técnica e preço rapidamente."
+            },
+            {
+                "title": "Isotropia Z-Axis",
+                "desc": "Fusão química de camadas superior, garantindo resistência mecânica em todas as direções."
+            },
+            {
+                "title": "Materiais Reais",
+                "desc": "Processamos PEEK, Carbon Fiber e Nylon sem tensões internas."
+            }
+        ]
+    },
+    "tech": {
+        "badge": "H2D Tech Specs",
+        "title": "Domínio Térmico",
+        "title_highlight": "Extremo.",
+        "desc": "Impressão 3D de verdade exige controle. Nossa câmara aquecida ativa garante que polímeros como ABS e Nylon tenham a mesma resistência mecânica da injeção plástica.",
+        "chart_monitor": "MONITORAMENTO EM TEMPO REAL",
+        "chart_stability": "Estabilidade do Extrusor",
+        "chart_stable": "Estável",
+        "items": [
+            {
+                "title": "Hotend All-Metal",
+                "desc": "Derrete PEEK e Ultem sem esforço."
+            },
+            {
+                "title": "Câmara Aquecida",
+                "desc": "Zero warping em peças grandes."
+            },
+            {
+                "title": "Bico Endurecido",
+                "desc": "Imprime Fibra de Carbono por milhares de horas."
+            }
+        ]
+    }
+}

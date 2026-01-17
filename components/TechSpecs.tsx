@@ -2,11 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Thermometer, Wind, Zap, Cpu } from 'lucide-react';
-
-// =====================================================================
-// CORREÇÃO DO IMPORT DA IMAGEM
-// O ponto (.) significa "nesta mesma pasta (components)"
-// =====================================================================
+import { useTranslation } from 'react-i18next'; // <--- Importante
 import bgTexture from './fotos/fundo/pexels-acev-19931186.jpg';
 
 const data = [
@@ -44,25 +40,18 @@ const AnimatedNumber = ({ value }: { value: number }) => {
 };
 
 const TechSpecs: React.FC = () => {
+  const { t } = useTranslation(); // <--- Hook
+
   return (
     <section id="tecnologia" className="relative py-24 bg-slate-900 text-white overflow-hidden">
-
-      {/* Camada de Fundo com a Imagem */}
       <div className="absolute inset-0 z-0">
-        {/* Se a imagem não carregar, o bg-slate-900 garante que não fica branco */}
         <div className="absolute inset-0 bg-slate-900"></div>
-        <img
-          src={bgTexture}
-          alt="Tech Texture"
-          className="w-full h-full object-cover opacity-20 mix-blend-overlay"
-        />
+        <img src={bgTexture} alt="Tech Texture" className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-          {/* Conteúdo Esquerdo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -71,35 +60,35 @@ const TechSpecs: React.FC = () => {
           >
             <div className="flex items-center gap-2 mb-6">
               <Cpu className="text-brand-400" size={20} />
-              <span className="text-brand-400 font-mono text-sm uppercase tracking-widest">H2D Tech Specs</span>
+              <span className="text-brand-400 font-mono text-sm uppercase tracking-widest">{t('tech.badge')}</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Domínio Térmico <br />
+              {t('tech.title')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                Extremo.
+                {t('tech.title_highlight')}
               </span>
             </h2>
             <p className="text-slate-400 text-lg mb-10 leading-relaxed font-light">
-              Impressão 3D de verdade exige controle. Nossa câmara aquecida ativa garante que polímeros como ABS e Nylon tenham a mesma resistência mecânica da injeção plástica.
+              {t('tech.desc')}
             </p>
 
             <div className="grid gap-6">
               {[
                 {
                   icon: Thermometer, color: "text-red-400", bg: "bg-red-500/10",
-                  title: "Hotend All-Metal", value: "350°C",
-                  desc: "Derrete PEEK e Ultem sem esforço."
+                  title: t('tech.items.0.title'), value: "350°C",
+                  desc: t('tech.items.0.desc')
                 },
                 {
                   icon: Wind, color: "text-orange-400", bg: "bg-orange-500/10",
-                  title: "Câmara Aquecida", value: "80°C",
-                  desc: "Zero warping em peças grandes."
+                  title: t('tech.items.1.title'), value: "80°C",
+                  desc: t('tech.items.1.desc')
                 },
                 {
                   icon: Zap, color: "text-yellow-400", bg: "bg-yellow-500/10",
-                  title: "Bico Endurecido", value: "65 HRC",
-                  desc: "Imprime Fibra de Carbono por milhares de horas."
+                  title: t('tech.items.2.title'), value: "65 HRC",
+                  desc: t('tech.items.2.desc')
                 }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors backdrop-blur-sm">
@@ -117,7 +106,6 @@ const TechSpecs: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Gráfico */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -129,8 +117,8 @@ const TechSpecs: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               <div className="flex justify-between items-start mb-8 relative z-10">
                 <div>
-                  <p className="text-slate-400 text-xs font-mono mb-1">MONITORAMENTO EM TEMPO REAL</p>
-                  <h3 className="text-xl font-semibold text-white">Estabilidade do Extrusor</h3>
+                  <p className="text-slate-400 text-xs font-mono mb-1">{t('tech.chart_monitor')}</p>
+                  <h3 className="text-xl font-semibold text-white">{t('tech.chart_stability')}</h3>
                 </div>
                 <div className="text-right">
                   <div className="text-4xl font-bold text-brand-400 font-mono flex items-center justify-end">
@@ -139,11 +127,10 @@ const TechSpecs: React.FC = () => {
                   </div>
                   <span className="text-xs text-green-400 flex items-center justify-end gap-1">
                     <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                    Estável
+                    {t('tech.chart_stable')}
                   </span>
                 </div>
               </div>
-
               <div className="h-64 w-full relative z-10">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={data}>
@@ -157,7 +144,6 @@ const TechSpecs: React.FC = () => {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

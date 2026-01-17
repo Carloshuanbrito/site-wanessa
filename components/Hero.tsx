@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Button from './Button'; // Certifique-se que seu Button aceita className ou style
+import Button from './Button';
 import heroImage from './fotos/pexels-thisisengineering-3861437.jpg';
-import { ArrowRight, Box, Layers, Zap } from 'lucide-react'; // Ícones modernos
+import { ArrowRight, Layers, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // <--- Importante
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation(); // <--- Hook
+
   return (
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-slate-50 flex items-center">
 
-      {/* 1. Fundo Técnico (Grid de Engenharia) */}
+      {/* 1. Fundo Técnico */}
       <div className="absolute inset-0 z-0 opacity-[0.4]"
         style={{
           backgroundImage: 'linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px)',
@@ -16,7 +19,7 @@ const Hero: React.FC = () => {
         }}>
       </div>
 
-      {/* 2. Blobs de Luz (Glow effect) */}
+      {/* 2. Blobs de Luz */}
       <div className="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
       <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
 
@@ -29,7 +32,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          {/* Badge "Novidade" */}
+          {/* Badge */}
           <motion.div
             initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }}
             className="inline-flex items-center px-3 py-1 bg-white border border-brand-100 rounded-full shadow-sm mb-6"
@@ -38,48 +41,47 @@ const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
             </span>
-            <span className="text-slate-600 text-xs font-bold uppercase tracking-wider">H2D Systems v4.0</span>
+            <span className="text-slate-600 text-xs font-bold uppercase tracking-wider">{t('hero.badge')}</span>
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
-            Engenharia <br />
+            {t('hero.title_main')} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">
-              Materializada.
+              {t('hero.title_gradient')}
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-light">
-            Do CAD à peça final em compósitos de alta performance.
-            <strong className="text-slate-900 font-semibold"> Câmaras de 350°C</strong> para imprimir o impossível.
+            {t('hero.description')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="primary" icon>
-              <span className="flex items-center gap-2">Iniciar Projeto <ArrowRight size={18} /></span>
+              <span className="flex items-center gap-2">{t('hero.cta_primary')} <ArrowRight size={18} /></span>
             </Button>
-            <Button variant="outline">Ver Materiais</Button>
+            <Button variant="outline">{t('hero.cta_secondary')}</Button>
           </div>
 
           {/* Dados Rápidos (Specs) */}
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-slate-200 pt-8">
             <div>
               <p className="text-3xl font-bold text-slate-900">24h</p>
-              <p className="text-xs text-slate-500 uppercase font-semibold">Cotação</p>
+              <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_quote')}</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-slate-900">350°C</p>
-              <p className="text-xs text-slate-500 uppercase font-semibold">Temp. Hotend</p>
+              <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_temp')}</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-slate-900">ISO</p>
-              <p className="text-xs text-slate-500 uppercase font-semibold">Qualidade</p>
+              <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_quality')}</p>
             </div>
           </div>
         </motion.div>
 
-        {/* Lado Direito: Imagem com Elementos Flutuantes */}
+        {/* Lado Direito */}
         <div className="relative hidden lg:block h-[600px]">
-          {/* Card Flutuante 1 - Glassmorphism */}
+          {/* Card Flutuante */}
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -88,8 +90,8 @@ const Hero: React.FC = () => {
             <div className="flex items-center gap-3 mb-2">
               <div className="p-2 bg-blue-100 rounded-lg"><Layers size={20} className="text-brand-600" /></div>
               <div>
-                <p className="text-xs text-slate-500 font-semibold">Material</p>
-                <p className="text-sm font-bold text-slate-800">Carbon Fiber</p>
+                <p className="text-xs text-slate-500 font-semibold">{t('hero.float_card_label')}</p>
+                <p className="text-sm font-bold text-slate-800">{t('hero.float_card_value')}</p>
               </div>
             </div>
             <div className="w-full bg-slate-200 h-1.5 rounded-full mt-2 overflow-hidden">
@@ -97,7 +99,7 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Imagem Principal Recortada (Shape diferente) */}
+          {/* Imagem */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -110,18 +112,15 @@ const Hero: React.FC = () => {
               alt="Peça 3D H2D"
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
             />
-
-            {/* Texto sobre a imagem */}
             <div className="absolute bottom-8 left-8 z-20">
               <div className="flex items-center gap-2 text-white mb-1">
                 <Zap size={16} className="text-yellow-400 fill-yellow-400" />
-                <span className="text-sm font-bold uppercase tracking-widest">Produção Ativa</span>
+                <span className="text-sm font-bold uppercase tracking-widest">{t('hero.img_label')}</span>
               </div>
-              <p className="text-white text-lg font-light">Impressão de Polímeros Avançados</p>
+              <p className="text-white text-lg font-light">{t('hero.img_desc')}</p>
             </div>
           </motion.div>
 
-          {/* Elemento Decorativo de Fundo */}
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 z-0"></div>
         </div>
       </div>
