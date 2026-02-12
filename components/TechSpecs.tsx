@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Thermometer, Wind, Zap, Cpu } from 'lucide-react';
-import { useTranslation } from 'react-i18next'; // <--- Importante
+import { Thermometer, Wind, Zap, Cpu, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import bgTexture from './fotos/fundo/pexels-acev-19931186.jpg';
 
 const data = [
@@ -40,7 +40,7 @@ const AnimatedNumber = ({ value }: { value: number }) => {
 };
 
 const TechSpecs: React.FC = () => {
-  const { t } = useTranslation(); // <--- Hook
+  const { t } = useTranslation();
 
   return (
     <section id="tecnologia" className="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -81,13 +81,13 @@ const TechSpecs: React.FC = () => {
                   desc: t('tech.items.0.desc')
                 },
                 {
-                  icon: Wind, color: "text-orange-400", bg: "bg-orange-500/10",
-                  title: t('tech.items.1.title'), value: "80°C",
+                  icon: CheckCircle2, color: "text-green-400", bg: "bg-green-500/10",
+                  title: t('tech.items.1.title'), value: "TESTADO",
                   desc: t('tech.items.1.desc')
                 },
                 {
                   icon: Zap, color: "text-yellow-400", bg: "bg-yellow-500/10",
-                  title: t('tech.items.2.title'), value: "65 HRC",
+                  title: t('tech.items.2.title'), value: "CF READY",
                   desc: t('tech.items.2.desc')
                 }
               ].map((item, idx) => (

@@ -39,7 +39,7 @@ const CTA: React.FC = () => {
             </h2>
 
             <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto font-light">
-              Envie seu arquivo STL ou STEP agora. Nossa engenharia analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.
+              Envie seu projeto 3D ou STEP agora. Nossa engenharia analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

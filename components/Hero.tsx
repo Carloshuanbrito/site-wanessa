@@ -72,10 +72,6 @@ const Hero: React.FC = () => {
               <p className="text-3xl font-bold text-slate-900">350°C</p>
               <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_temp')}</p>
             </div>
-            <div>
-              <p className="text-3xl font-bold text-slate-900">ISO</p>
-              <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_quality')}</p>
-            </div>
           </div>
         </motion.div>
 

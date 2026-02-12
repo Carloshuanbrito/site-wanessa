@@ -3,17 +3,18 @@
         "materials": "Materials",
         "tech": "Technology",
         "services": "Services",
-        "cta": "Get Quote"
+        "cta": "Get Quote",
+        "brand": "Aditive Maintenance"
     },
     "hero": {
-        "badge": "H2D Systems v4.0",
+        "badge": "Aditive Maintenance",
         "title_main": "Engineering",
         "title_gradient": "Materialized.",
-        "description": "From CAD to final part in high-performance composites. 350°C chambers to print the impossible.",
+        "description": "Reduce physical inventory. Work with fast delivery or create your own digital parts stock. Certified parts delivery with fast port service.",
         "cta_primary": "Start Project",
         "cta_secondary": "View Materials",
         "stat_quote": "Quote",
-        "stat_temp": "Hotend Temp",
+        "stat_temp": "Fab. Temp.",
         "stat_quality": "Quality",
         "float_card_label": "Material",
         "float_card_value": "Carbon Fiber",
@@ -27,103 +28,96 @@
         "btn_datasheet": "View datasheet",
         "recommended": "Recommended",
         "general": {
-            "title": "Rapid Prototyping",
-            "desc": "Excellent cost-benefit materials with great visual finish for shape validation.",
+            "title": "High Resistance",
+            "desc": "Definitive solutions for durable parts.",
             "items": [
                 {
-                    "name": "PLA Premium",
-                    "desc": "Great surface finish for visual models. Easy printing."
+                    "name": "High Resistance Plastics",
+                    "desc": "Standardized materials for robust applications."
                 },
                 {
-                    "name": "Translucent PETG",
-                    "desc": "Good mechanical resistance and slight flexibility. Ideal for containers."
-                },
-                {
-                    "name": "TPU (Flex A95)",
-                    "desc": "Elastomer with rubber properties. For seals and dampers."
+                    "name": "PET",
+                    "desc": "Versatile material with good chemical and mechanical resistance."
                 }
             ]
         },
         "engineering": {
-            "title": "Engineering Grade",
-            "desc": "Robust technical polymers to replace end-use parts, withstanding heat, impact, and friction.",
+            "title": "Composites",
+            "desc": "Reinforced materials for maximum structural performance.",
             "items": [
                 {
-                    "name": "Industrial ABS",
-                    "desc": "Standard for durable parts. Good thermal resistance (up to 85°C)."
+                    "name": "PA with Carbon Fiber",
+                    "desc": "Nylon reinforced with carbon fiber. Maximum structural rigidity and lightweight."
                 },
                 {
-                    "name": "ASA UV-Resist",
-                    "desc": "The 'Outdoor ABS'. Does not degrade or yellow under sunlight."
-                },
-                {
-                    "name": "PC (Polycarbonate)",
-                    "desc": "Extreme impact resistance and high temperature (110°C+)."
-                },
-                {
-                    "name": "Nylon PA12/PA6",
-                    "desc": "Exceptional toughness, low friction, and chemical resistance."
+                    "name": "PA with Glass Fiber",
+                    "desc": "Nylon reinforced with glass fiber. High dimensional stability."
                 }
             ]
         },
         "advanced": {
-            "title": "High Performance",
-            "desc": "The pinnacle of additive manufacturing. Reinforced composites and superpolymers for extreme environments.",
-            "items": [
-                {
-                    "name": "Carbon Fiber (PA-CF)",
-                    "desc": "Nylon reinforced with carbon fiber. Maximum structural rigidity."
-                },
-                {
-                    "name": "Glass Fiber (PA-GF)",
-                    "desc": "Superior dimensional stability and electrical/thermal insulation."
-                },
-                {
-                    "name": "PEEK / PPS",
-                    "desc": "Metal replacement. Resists aggressive chemicals, fire, and 200°C+."
-                }
-            ]
+            "title": "Others",
+            "desc": "Contact us for specific materials.",
+            "items": []
         }
     },
     "why": {
-        "title": "Precision Additive",
-        "title_highlight": "Engineering",
-        "subtitle": "We overcome conventional 3D printing limitations with industrial hardware and rigorous process control.",
-        "items": [
+        "title": "Advantages and",
+        "title_highlight": "Services",
+        "subtitle": "Definitive solutions for your industry with cutting-edge technology.",
+        "advantages": [
             {
-                "title": "80°C Heated Chamber",
-                "desc": "Controlled environment that eliminates warping in large ABS and ASA parts."
+                "title": "Leadtime Reduction",
+                "desc": "Agility in delivery to keep your operation running."
             },
             {
-                "title": "24h Quoting",
-                "desc": "Get technical analysis and pricing quickly."
+                "title": "Cost Reduction",
+                "desc": "Significant savings on parts import."
             },
             {
-                "title": "Z-Axis Isotropy",
-                "desc": "Superior chemical layer fusion, ensuring mechanical strength in all directions."
+                "title": "Reliable Projects",
+                "desc": "Fast and reliable engineering files (3D Project)."
             },
             {
-                "title": "Real Materials",
-                "desc": "We process PEEK, Carbon Fiber, and Nylon without internal stresses."
+                "title": "Reverse Engineering",
+                "desc": "Plastic replacement parts from broken parts."
+            }
+        ],
+        "services": [
+            {
+                "title": "Industrial Rental",
+                "desc": "Rental of industrial 3D printers for your plant."
+            },
+            {
+                "title": "Medium Scale Printing",
+                "desc": "Serial production without high mold costs."
+            },
+            {
+                "title": "Digitization",
+                "desc": "Digitization and design of engineering parts."
+            },
+            {
+                "title": "Prototyping",
+                "desc": "Functional prototyping with brand engraving."
             }
         ]
     },
     "tech": {
-        "badge": "H2D Tech Specs",
-        "title": "Extreme Thermal",
-        "title_highlight": "Domain.",
-        "desc": "Real 3D printing requires control. Our active heated chamber ensures polymers like ABS and Nylon have injection-molded mechanical strength.",
+        "badge": "Tech Specs",
+        "title": "Thermal Control",
+        "title_highlight": "Absolute.",
+        "desc": "Guarantee of superior mechanical properties through rigorous temperature control.",
         "chart_monitor": "REAL-TIME MONITORING",
         "chart_stability": "Extruder Stability",
         "chart_stable": "Stable",
         "items": [
             {
-                "title": "All-Metal Hotend",
-                "desc": "Melts PEEK and Ultem effortlessly."
+                "title": "High Temperature",
+                "desc": "Manufacturing temperature up to 350 degrees."
             },
             {
-                "title": "Heated Chamber",
-                "desc": "Zero warping on large parts."
+                "title": "Reliability",
+                "desc": "Parts tested at real usage temperatures."
             },
             {
                 "title": "Hardened Nozzle",

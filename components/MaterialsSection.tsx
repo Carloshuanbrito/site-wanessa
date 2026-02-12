@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Box, Layers, Zap, ArrowRight, Sparkles } from 'lucide-react';
-import { useTranslation } from 'react-i18next'; // <--- Importante
+import { useTranslation } from 'react-i18next';
 
-// Imagens (Mantenha seus imports como estavam)
 import imgGeneral1 from './fotos/pexels-cottonbro-6763944.jpg';
 import imgGeneral2 from './fotos/pexels-thirdman-7181111.jpg';
 import imgGeneral3 from './fotos/pexels-jakubzerdzicki-19149826.jpg';
@@ -18,10 +17,9 @@ import imgAdv3 from './fotos/pexels-thisisengineering-3861437.jpg';
 type CategoryId = 'GENERAL' | 'ENGINEERING' | 'ADVANCED';
 
 const MaterialsSection: React.FC = () => {
-  const { t } = useTranslation(); // <--- Hook
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<CategoryId>('ENGINEERING');
 
-  // Agora as categorias usam t() para pegar o texto do JSON
   const categories = {
     GENERAL: {
       title: t('materials.general.title'),
@@ -31,8 +29,7 @@ const MaterialsSection: React.FC = () => {
       gradientOverlay: "from-blue-900/90 via-blue-900/50 to-transparent",
       items: [
         { name: t('materials.general.items.0.name'), desc: t('materials.general.items.0.desc'), image: imgGeneral1 },
-        { name: t('materials.general.items.1.name'), desc: t('materials.general.items.1.desc'), image: imgGeneral2 },
-        { name: t('materials.general.items.2.name'), desc: t('materials.general.items.2.desc'), image: imgGeneral3 }
+        { name: t('materials.general.items.1.name'), desc: t('materials.general.items.1.desc'), image: imgGeneral2 }
       ]
     },
     ENGINEERING: {
@@ -43,9 +40,7 @@ const MaterialsSection: React.FC = () => {
       gradientOverlay: "from-emerald-900/90 via-emerald-900/50 to-transparent",
       items: [
         { name: t('materials.engineering.items.0.name'), desc: t('materials.engineering.items.0.desc'), image: imgEng1 },
-        { name: t('materials.engineering.items.1.name'), desc: t('materials.engineering.items.1.desc'), image: imgEng2 },
-        { name: t('materials.engineering.items.2.name'), desc: t('materials.engineering.items.2.desc'), image: imgEng3 },
-        { name: t('materials.engineering.items.3.name'), desc: t('materials.engineering.items.3.desc'), image: imgEng4 }
+        { name: t('materials.engineering.items.1.name'), desc: t('materials.engineering.items.1.desc'), image: imgEng2 }
       ]
     },
     ADVANCED: {
@@ -54,11 +49,7 @@ const MaterialsSection: React.FC = () => {
       icon: Zap,
       colorName: "purple",
       gradientOverlay: "from-purple-900/90 via-purple-950/60 to-transparent",
-      items: [
-        { name: t('materials.advanced.items.0.name'), desc: t('materials.advanced.items.0.desc'), image: imgAdv1, featured: true },
-        { name: t('materials.advanced.items.1.name'), desc: t('materials.advanced.items.1.desc'), image: imgAdv2 },
-        { name: t('materials.advanced.items.2.name'), desc: t('materials.advanced.items.2.desc'), image: imgAdv3 }
-      ]
+      items: []
     }
   };
 
@@ -67,14 +58,11 @@ const MaterialsSection: React.FC = () => {
 
   return (
     <section id="materiais" className="relative py-24 bg-slate-50 overflow-hidden">
-      {/* Elementos de fundo */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl mix-blend-multiply -translate-y-1/2"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Cabeçalho */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             {t('materials.header_title')} <span className="text-brand-600">{t('materials.header_highlight')}</span>
@@ -84,9 +72,9 @@ const MaterialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {Object.entries(categories).map(([key, cat]) => {
+            if (cat.items.length === 0) return null;
             const isActive = activeTab === key;
             const Icon = cat.icon;
             let btnClass = "";
@@ -111,7 +99,6 @@ const MaterialsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Conteúdo */}
         <AnimatePresence mode='wait'>
           <motion.div
             key={activeTab}
@@ -121,7 +108,6 @@ const MaterialsSection: React.FC = () => {
             transition={{ duration: 0.4 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Esquerda */}
               <div className="lg:col-span-4 flex flex-col justify-center p-8 bg-white rounded-3xl border border-slate-100 shadow-sm h-full relative overflow-hidden">
                 <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-20 -mr-10 -mt-10 bg-${activeCategoryData.colorName}-500`}></div>
                 <div className="relative z-10">
@@ -139,7 +125,6 @@ const MaterialsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Direita */}
               <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                 {activeCategoryData.items.map((item, idx) => (
                   <motion.div

@@ -62,23 +62,17 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
-          ? 'bg-white/70 backdrop-blur-md shadow-md py-3'
-          : 'bg-transparent py-6'
+        ? 'bg-white/70 backdrop-blur-md shadow-md py-3'
+        : 'bg-transparent py-6'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
 
-          {/* Logo */}
-          <div className="flex items-center space-x-2 group cursor-pointer">
-            <div className={`p-2 rounded-lg transition-colors duration-300 ${isScrolled ? 'bg-brand-600 text-white' : 'bg-white text-brand-600 shadow-sm'
-              }`}>
-              <Box className="h-6 w-6" strokeWidth={2.5} />
-            </div>
-            <span className={`text-xl font-bold tracking-tight transition-colors ${isScrolled ? 'text-slate-900' : 'text-slate-800'
-              }`}>
-              H2D<span className="text-brand-500">.sys</span>
-            </span>
+
+          <div className="flex items-center gap-3">
+            <Box className="h-8 w-8 text-brand-600" strokeWidth={2.5} />
+            <span className="text-xl font-bold text-slate-900 tracking-tight">Aditive Maintenance</span>
           </div>
 
           {/* Menu Desktop */}
@@ -100,8 +94,8 @@ const Navbar: React.FC = () => {
             <button
               onClick={toggleLanguage}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 ${isScrolled
-                  ? 'border border-slate-200 bg-white/50 text-slate-700 hover:border-brand-500'
-                  : 'bg-white/20 backdrop-blur-sm border border-white/30 text-slate-800 hover:bg-white/40'
+                ? 'border border-slate-200 bg-white/50 text-slate-700 hover:border-brand-500'
+                : 'bg-white/20 backdrop-blur-sm border border-white/30 text-slate-800 hover:bg-white/40'
                 }`}
             >
               {/* Mostra a bandeira do idioma ATUAL */}

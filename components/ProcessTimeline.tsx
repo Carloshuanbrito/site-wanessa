@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
-import { UploadCloud, ScanSearch, Printer, PackageCheck, ArrowRight } from 'lucide-react';
+import { UploadCloud, ScanSearch, Printer, PackageCheck, ArrowRight, CheckCircle, Clock } from 'lucide-react';
 
 const steps = [
     {
         id: 1,
         title: "Upload Inteligente",
-        desc: "Envie seu STL/STEP. Nossa IA analisa a geometria instantaneamente.",
+        desc: "Envie seu Projeto 3D/STEP. Nossa IA analisa a geometria instantaneamente.",
         icon: UploadCloud,
         color: "blue",
         glow: "shadow-blue-500/20",
@@ -140,7 +140,7 @@ const ProcessTimeline: React.FC = () => {
                         className="inline-flex items-center justify-center px-4 py-1.5 mb-6 border border-slate-800 rounded-full bg-slate-900/50 backdrop-blur-sm"
                     >
                         <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse mr-2"></span>
-                        <span className="text-slate-400 text-xs font-mono uppercase tracking-widest">Workflow Industrial H2D</span>
+                        <span className="text-slate-400 text-xs font-mono uppercase tracking-widest">Workflow Industrial</span>
                     </motion.div>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -153,7 +153,7 @@ const ProcessTimeline: React.FC = () => {
                 <div className="hidden md:block absolute top-[60%] left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent z-0 opacity-30"></div>
 
                 {/* Grid de Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mb-24">
                     {steps.map((step, idx) => (
                         <React.Fragment key={idx}>
                             <TiltCard step={step} index={idx} />
@@ -167,6 +167,58 @@ const ProcessTimeline: React.FC = () => {
                         </React.Fragment>
                     ))}
                 </div>
+
+                {/* CASE STUDY / APLICAÇÃO REAL */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-gradient-to-br from-brand-900/20 to-slate-900 border border-brand-500/20 rounded-3xl p-8 relative overflow-hidden"
+                >
+                    <div className="absolute top-0 right-0 p-32 bg-brand-500/10 blur-3xl rounded-full translate-x-12 -translate-y-12"></div>
+
+                    <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
+                        <div className="flex-1">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-500/20 border border-brand-500/30 rounded-full text-brand-400 text-xs font-bold uppercase tracking-wider mb-4">
+                                <CheckCircle size={14} /> Case de Sucesso
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                                Válvula de Especial - Indústria Química
+                            </h3>
+                            <p className="text-slate-400 mb-6 leading-relaxed">
+                                Uma peça crítica falhou na linha de produção, paralisando a operação. Com a engenharia reversa e impressão 3D em alta performance, entregamos a solução em tempo recorde.
+                            </p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                                    <p className="text-slate-500 text-xs uppercase font-bold mb-1">Problema</p>
+                                    <p className="text-white font-medium">Parada de linha por falta de peça de reposição.</p>
+                                </div>
+                                <div className="bg-green-500/10 p-4 rounded-xl border border-green-500/20">
+                                    <p className="text-green-400 text-xs uppercase font-bold mb-1">Resultado</p>
+                                    <p className="text-white font-medium flex items-center gap-2">
+                                        <Clock size={16} className="text-green-400" />
+                                        Produção retomada em 3 horas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="w-full md:w-1/3 aspect-video bg-slate-800 rounded-xl overflow-hidden relative group">
+                            {/* Placeholder visual para o case */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-transparent"></div>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <Printer size={48} className="text-slate-600 opacity-50" />
+                            </div>
+                            <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md p-3 rounded-lg border border-white/10">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-xs text-slate-300">Tempo de Impressão</span>
+                                    <span className="text-brand-400 font-mono font-bold">1h 45min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
 
             </div>
         </section>
