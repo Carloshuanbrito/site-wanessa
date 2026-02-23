@@ -3,10 +3,6 @@ import Button from './Button';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageSquare } from 'lucide-react';
 
-// =====================================================================
-// CORREÇÃO DO IMPORT DA IMAGEM
-// Verifique se o arquivo "pexels-diva-34925022.jpg" existe mesmo na pasta fundo
-// =====================================================================
 import bgCta from './fotos/fundo/pexels-diva-34925022.jpg';
 
 const CTA: React.FC = () => {
@@ -33,7 +29,7 @@ const CTA: React.FC = () => {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
               Seu projeto merece <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-300">
+              <span className="text-brand-400">
                 materialização profissional.
               </span>
             </h2>

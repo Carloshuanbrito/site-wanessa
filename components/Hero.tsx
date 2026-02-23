@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 import heroImage from './fotos/pexels-thisisengineering-3861437.jpg';
 import { ArrowRight, Layers, Zap } from 'lucide-react';
-import { useTranslation } from 'react-i18next'; // <--- Importante
+import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
-  const { t } = useTranslation(); // <--- Hook
+  const { t } = useTranslation();
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-slate-50 flex items-center">
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
             {t('hero.title_main')} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">
+            <span className="text-brand-600">
               {t('hero.title_gradient')}
             </span>
           </h1>
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent z-10"></div>
             <img
               src={heroImage}
-              alt="Peça 3D H2D"
+              alt="Peça Manutenção Aditiva"
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute bottom-8 left-8 z-20">

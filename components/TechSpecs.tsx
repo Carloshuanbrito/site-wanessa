@@ -65,7 +65,7 @@ const TechSpecs: React.FC = () => {
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {t('tech.title')} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              <span className="text-blue-400">
                 {t('tech.title_highlight')}
               </span>
             </h2>

@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
               <div className="bg-brand-600 p-2 rounded-lg">
                 <Box className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-slate-900">H2D<span className="text-brand-600">.sys</span></span>
+              <span className="text-xl font-bold text-slate-900">Aditive<span className="text-brand-600"> Maintenance</span></span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Transformando bits em átomos com precisão industrial. Seu parceiro de manufatura aditiva de alta performance.
+              Reduza os seus estoques físicos e trabalhe com entrega rápida ou crie o seu próprio estoque digital de peças. Soluções definitivas e padronizadas.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-slate-400 hover:text-brand-600 transition-colors"><Linkedin size={20} /></a>
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-slate-900 mb-4">Serviços</h4>
             <ul className="space-y-3 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Prototipagem Rápida</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Peças Finais (End-use)</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Lotes Pequenos</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Consultoria em DfAM</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">Locação Industrial</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">Impressão Média Escala</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">Digitalização</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">Prototipagem</a></li>
             </ul>
           </div>
 
@@ -39,22 +39,22 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-slate-900 mb-4">Materiais</h4>
             <ul className="space-y-3 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-brand-600 transition-colors">PLA / PETG</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">ABS / ASA Engineering</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Nylon (PA12 / PA6)</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Carbon Fiber Composites</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">PA com Fibra de Carbono</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">PA com Fibra de Vidro</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">PET</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">Plásticos de Alta Resistência</a></li>
             </ul>
           </div>
 
           {/* Coluna 4: Contato */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-4">Fale Conosco</h4>
+            <h4 className="font-bold text-slate-900 mb-4">Fale Connosco</h4>
             <ul className="space-y-4 text-sm text-slate-600">
               <li className="flex items-center group cursor-pointer">
                 <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3 group-hover:border-brand-300 transition-colors">
                   <Mail className="w-4 h-4 text-brand-600" />
                 </div>
-                contato@h2d.com.br
+                contato@aditivemaintenance.com.br
               </li>
               <li className="flex items-center group cursor-pointer">
                 <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3 group-hover:border-brand-300 transition-colors">
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-          <p>&copy; {new Date().getFullYear()} H2D Manufatura Aditiva. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Aditive Maintenance. Todos os direitos reservados.</p>
           <div className="mt-2 md:mt-0 flex items-center">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             Sistemas Operacionais
