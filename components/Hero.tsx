@@ -34,9 +34,7 @@ const Hero: React.FC = () => {
         >
           {/* Badge */}
           <motion.div
-            initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }}
-
-          >
+            initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }}>
             <span className="flex h-2 w-2 relative mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
@@ -55,10 +53,10 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="primary" icon>
+            <Button variant="primary" icon onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}>
               <span className="flex items-center gap-2">{t('hero.cta_primary')} <ArrowRight size={18} /></span>
             </Button>
-            <Button variant="outline">{t('hero.cta_secondary')}</Button>
+            <Button variant="outline" onClick={() => document.getElementById('materiais')?.scrollIntoView({ behavior: 'smooth' })}>{t('hero.cta_secondary')}</Button>
           </div>
 
           {/* Dados Rápidos (Specs) */}

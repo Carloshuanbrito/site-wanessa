@@ -7,7 +7,7 @@ import bgCta from './fotos/fundo/pexels-diva-34925022.jpg';
 
 const CTA: React.FC = () => {
   return (
-    <section className="py-20 bg-slate-50 px-4">
+    <section id="contato" className="py-20 bg-slate-50 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -39,16 +39,16 @@ const CTA: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="primary" className="w-full sm:w-auto py-4 px-8 text-lg shadow-brand-500/25 shadow-lg group">
+              <Button onClick={() => window.location.href='mailto:contato@aditivemaintenance.com.br'} variant="primary" className="w-full sm:w-auto py-4 px-8 text-lg shadow-brand-500/25 shadow-lg group">
                 <span className="flex items-center justify-center gap-2">
                   Solicitar Cotação <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
 
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
                 <MessageSquare size={20} />
                 WhatsApp
-              </button>
+              </a>
             </div>
 
             <p className="mt-8 text-sm text-slate-500">

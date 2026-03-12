@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
               <span>{isPt ? 'PT' : 'EN'}</span>
             </button>
 
-            <Button variant={isScrolled ? 'primary' : 'outline'} className="shadow-lg shadow-brand-500/20">
+            <Button onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })} variant={isScrolled ? 'primary' : 'outline'} className="shadow-lg shadow-brand-500/20">
               {t('navbar.cta')}
             </Button>
           </div>
@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
                 </a>
               ))}
               <div className="pt-4 px-2">
-                <Button variant="primary" className="w-full justify-center text-lg py-3">
+                <Button onClick={() => { setIsMobileMenuOpen(false); document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' }); }} variant="primary" className="w-full justify-center text-lg py-3">
                   {t('navbar.cta')}
                 </Button>
               </div>

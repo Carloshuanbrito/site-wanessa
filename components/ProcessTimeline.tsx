@@ -33,7 +33,7 @@ const steps = [
     {
         id: 4,
         title: "Entrega Certificada",
-        desc: "Post-processing, limpeza química e envio com relatório dimensional.",
+        desc: "Pós-processamento, limpeza química e envio com relatório dimensional.",
         icon: PackageCheck,
         color: "purple",
         glow: "shadow-purple-500/20",
@@ -183,7 +183,7 @@ const ProcessTimeline: React.FC = () => {
                                 <CheckCircle size={14} /> Case de Sucesso
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                                Válvula de Especial - Indústria Química
+                                Válvula Especial - Indústria Química
                             </h3>
                             <p className="text-slate-400 mb-6 leading-relaxed">
                                 Uma peça crítica falhou na linha de produção, paralisando a operação. Com a engenharia reversa e impressão 3D em alta performance, entregamos a solução em tempo recorde.

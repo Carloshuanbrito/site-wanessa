@@ -118,7 +118,7 @@ const MaterialsSection: React.FC = () => {
                   <p className="text-slate-600 mb-8 leading-relaxed text-lg">
                     {activeCategoryData.description}
                   </p>
-                  <button className="flex items-center font-bold transition-colors group text-slate-900 hover:text-brand-600">
+                  <button onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })} className="flex items-center font-bold transition-colors group text-slate-900 hover:text-brand-600">
                     {t('materials.btn_datasheet')}
                     <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </button>

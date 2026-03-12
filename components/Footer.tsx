@@ -19,8 +19,12 @@ const Footer: React.FC = () => {
               Reduza os seus estoques físicos e trabalhe com entrega rápida ou crie o seu próprio estoque digital de peças. Soluções definitivas e padronizadas.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-brand-600 transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-brand-600 transition-colors"><Instagram size={20} /></a>
+              <a href="https://www.linkedin.com/company/blue-layer-3d/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-600 transition-colors" aria-label="LinkedIn">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://www.instagram.com/bluelayer3d?igsh=c2JnajBscDMxY3hn&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-600 transition-colors" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
             </div>
           </div>
 
@@ -48,7 +52,7 @@ const Footer: React.FC = () => {
 
           {/* Coluna 4: Contato */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-4">Fale Connosco</h4>
+            <h4 className="font-bold text-slate-900 mb-4">Fale Conosco</h4>
             <ul className="space-y-4 text-sm text-slate-600">
               <li className="flex items-center group cursor-pointer">
                 <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3 group-hover:border-brand-300 transition-colors">
