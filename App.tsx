@@ -8,6 +8,7 @@ import ProcessTimeline from './components/ProcessTimeline'; // <--- NOVO
 import TechSpecs from './components/TechSpecs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import './index.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <CTA />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

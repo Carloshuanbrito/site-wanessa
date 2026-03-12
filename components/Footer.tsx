@@ -61,16 +61,18 @@ const Footer: React.FC = () => {
                 contato@aditivemaintenance.com.br
               </li>
               <li className="flex items-center group cursor-pointer">
-                <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3 group-hover:border-brand-300 transition-colors">
-                  <Phone className="w-4 h-4 text-brand-600" />
-                </div>
-                +55 11 99999-9999
+                <a href="https://wa.me/5585997629938" target="_blank" rel="noopener noreferrer" className="flex items-center w-full">
+                  <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3 group-hover:border-green-500 transition-colors">
+                    <Phone className="w-4 h-4 text-green-500" />
+                  </div>
+                  (85) 99762-9938
+                </a>
               </li>
               <li className="flex items-center">
                 <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3">
                   <MapPin className="w-4 h-4 text-brand-600" />
                 </div>
-                São Paulo, SP - Brasil
+                Fortaleza, CE - Brasil
               </li>
             </ul>
           </div>

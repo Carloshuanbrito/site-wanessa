@@ -32,12 +32,20 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          {/* Badge */}
+          {/* Badge de Localização / Polo */}
           <motion.div
-            initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }}>
-            <span className="flex h-2 w-2 relative mr-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm"
+          >
+            <div className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            </div>
+            <span className="text-cyan-700 font-bold text-xs uppercase tracking-widest flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              Polo Principal em Fortaleza
             </span>
           </motion.div>
 

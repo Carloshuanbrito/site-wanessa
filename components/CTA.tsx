@@ -45,7 +45,7 @@ const CTA: React.FC = () => {
                 </span>
               </Button>
 
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
+              <a href="https://wa.me/5585997629938" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium hover:bg-green-600 transition-colors border border-green-500/50 backdrop-blur-sm bg-green-500/20">
                 <MessageSquare size={20} />
                 WhatsApp
               </a>
@@ -55,6 +55,25 @@ const CTA: React.FC = () => {
               Resposta garantida em até 24h úteis.
             </p>
           </div>
+        </motion.div>
+
+        {/* Google Maps Embed */}
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5, delay: 0.2 }}
+           className="mt-12 rounded-3xl overflow-hidden shadow-xl border border-slate-200 h-80 relative"
+        >
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127755.99!2d-38.5434!3d-3.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74899a069be4d%3A0x790caf2f9f7b5d2f!2sFortaleza%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1" 
+            width="100%" 
+            height="400" 
+            style={{ border: 0, borderRadius: '12px' }} 
+            allowFullScreen={true} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Localização em Fortaleza"
+          ></iframe>
         </motion.div>
       </div>
     </section>

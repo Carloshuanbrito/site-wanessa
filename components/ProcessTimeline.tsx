@@ -9,35 +9,39 @@ const steps = [
         desc: "Envie seu Projeto 3D/STEP. Nossa IA analisa a geometria instantaneamente.",
         icon: UploadCloud,
         color: "blue",
-        glow: "shadow-blue-500/20",
-        border: "group-hover:border-blue-500/50"
+        glow: "shadow-blue-500/50",
+        border: "group-hover:border-blue-500/60",
+        tooltip: "Análise automática de malha 3D e geometria"
     },
     {
         id: 2,
         title: "Validação Técnica",
         desc: "Engenheiros verificam tolerâncias e orientam o melhor material.",
         icon: ScanSearch,
-        color: "emerald",
-        glow: "shadow-emerald-500/20",
-        border: "group-hover:border-emerald-500/50"
+        color: "blue",
+        glow: "shadow-blue-500/50",
+        border: "group-hover:border-blue-500/60",
+        tooltip: "Verificação de tolerâncias e recomendação de material"
     },
     {
         id: 3,
         title: "Manufatura Industrial",
         desc: "Impressão em câmara aquecida (350°C) com controle de qualidade.",
         icon: Printer,
-        color: "amber",
-        glow: "shadow-amber-500/20",
-        border: "group-hover:border-amber-500/50"
+        color: "blue",
+        glow: "shadow-blue-500/50",
+        border: "group-hover:border-blue-500/60",
+        tooltip: "Impressão 3D de alta performance"
     },
     {
         id: 4,
         title: "Entrega Certificada",
         desc: "Pós-processamento, limpeza química e envio com relatório dimensional.",
         icon: PackageCheck,
-        color: "purple",
-        glow: "shadow-purple-500/20",
-        border: "group-hover:border-purple-500/50"
+        color: "blue",
+        glow: "shadow-blue-500/50",
+        border: "group-hover:border-blue-500/60",
+        tooltip: "Relatório dimensional e engenharia de qualidade"
     }
 ];
 
@@ -90,8 +94,8 @@ const TiltCard = ({ step, index }: { step: any, index: number }) => {
 
                 {/* Header do Card */}
                 <div style={{ transform: "translateZ(30px)" }}>
-                    {/* Ícone com brilho colorido */}
-                    <div className={`w-14 h-14 rounded-xl bg-${step.color}-500/10 flex items-center justify-center mb-6 border border-${step.color}-500/20 group-hover:scale-110 transition-transform duration-500`}>
+                    {/* Ícone com brilho colorido e Tooltip */}
+                    <div title={step.tooltip} className={`relative w-14 h-14 rounded-xl bg-${step.color}-500/10 flex items-center justify-center mb-6 border border-${step.color}-500/20 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all duration-500 cursor-help`}>
                         <step.icon size={28} className={`text-${step.color}-400`} />
                     </div>
 
@@ -155,7 +159,14 @@ const ProcessTimeline: React.FC = () => {
                 {/* Grid de Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mb-24">
                     {steps.map((step, idx) => (
-                        <React.Fragment key={idx}>
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: idx * 0.15 }}
+                            className="relative"
+                        >
                             <TiltCard step={step} index={idx} />
 
                             {/* Seta de Conexão (Entre cards) - Desktop only */}
@@ -164,7 +175,7 @@ const ProcessTimeline: React.FC = () => {
                                     <ArrowRight size={24} className="opacity-20" />
                                 </div>
                             )}
-                        </React.Fragment>
+                        </motion.div>
                     ))}
                 </div>
 
