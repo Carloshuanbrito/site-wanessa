@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const FloatingWhatsApp: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <motion.a
             href="https://wa.me/5585997629938"
@@ -11,7 +14,7 @@ const FloatingWhatsApp: React.FC = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
             className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg shadow-green-500/40 hover:bg-green-600 hover:scale-110 transition-all duration-300"
-            aria-label="Fale conosco no WhatsApp"
+            aria-label={t('floating.aria')}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

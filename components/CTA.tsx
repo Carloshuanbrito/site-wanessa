@@ -2,10 +2,13 @@ import React from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageSquare } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import bgCta from './fotos/fundo/pexels-diva-34925022.jpg';
 
 const CTA: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="contato" className="py-20 bg-slate-50 px-4">
       <div className="max-w-6xl mx-auto">
@@ -28,31 +31,31 @@ const CTA: React.FC = () => {
 
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              Seu projeto merece <br className="hidden md:block" />
+              {t('cta.title')} <br className="hidden md:block" />
               <span className="text-brand-400">
-                materialização profissional.
+                {t('cta.title_highlight')}
               </span>
             </h2>
 
             <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto font-light">
-              Envie seu projeto 3D ou STEP agora. Nossa engenharia analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.
+              {t('cta.desc')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button onClick={() => window.location.href='mailto:contato@aditivemaintenance.com.br'} variant="primary" className="w-full sm:w-auto py-4 px-8 text-lg shadow-brand-500/25 shadow-lg group">
                 <span className="flex items-center justify-center gap-2">
-                  Solicitar Cotação <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  {t('cta.btn_quote')} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
 
               <a href="https://wa.me/5585997629938" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium hover:bg-green-600 transition-colors border border-green-500/50 backdrop-blur-sm bg-green-500/20">
                 <MessageSquare size={20} />
-                WhatsApp
+                {t('cta.btn_wpp')}
               </a>
             </div>
 
             <p className="mt-8 text-sm text-slate-500">
-              Resposta garantida em até 24h úteis.
+              {t('cta.guarantee')}
             </p>
           </div>
         </motion.div>
@@ -72,7 +75,7 @@ const CTA: React.FC = () => {
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Localização em Fortaleza"
+            title={t('cta.map_title')}
           ></iframe>
         </motion.div>
       </div>

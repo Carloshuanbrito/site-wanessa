@@ -1,7 +1,10 @@
 import React from 'react';
 import { Box, Mail, MapPin, Phone, Linkedin, Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-slate-50 pt-16 pb-8 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +19,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold text-slate-900">Aditive<span className="text-brand-600"> Maintenance</span></span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Reduza os seus estoques físicos e trabalhe com entrega rápida ou crie o seu próprio estoque digital de peças. Soluções definitivas e padronizadas.
+              {t('footer.desc')}
             </p>
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/company/blue-layer-3d/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-600 transition-colors" aria-label="LinkedIn">
@@ -30,29 +33,29 @@ const Footer: React.FC = () => {
 
           {/* Coluna 2: Links */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-4">Serviços</h4>
+            <h4 className="font-bold text-slate-900 mb-4">{t('footer.services.title')}</h4>
             <ul className="space-y-3 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Locação Industrial</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Impressão Média Escala</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Digitalização</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Prototipagem</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.services.items.0')}</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.services.items.1')}</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.services.items.2')}</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.services.items.3')}</a></li>
             </ul>
           </div>
 
           {/* Coluna 3: Materiais */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-4">Materiais</h4>
+            <h4 className="font-bold text-slate-900 mb-4">{t('footer.materials.title')}</h4>
             <ul className="space-y-3 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-brand-600 transition-colors">PA com Fibra de Carbono</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">PA com Fibra de Vidro</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">PET</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Plásticos de Alta Resistência</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.materials.items.0')}</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.materials.items.1')}</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.materials.items.2')}</a></li>
+              <li><a href="#" className="hover:text-brand-600 transition-colors">{t('footer.materials.items.3')}</a></li>
             </ul>
           </div>
 
           {/* Coluna 4: Contato */}
           <div>
-            <h4 className="font-bold text-slate-900 mb-4">Fale Conosco</h4>
+            <h4 className="font-bold text-slate-900 mb-4">{t('footer.contact.title')}</h4>
             <ul className="space-y-4 text-sm text-slate-600">
               <li className="flex items-center group cursor-pointer">
                 <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3 group-hover:border-brand-300 transition-colors">
@@ -72,17 +75,17 @@ const Footer: React.FC = () => {
                 <div className="p-2 bg-white border border-slate-200 rounded-lg mr-3">
                   <MapPin className="w-4 h-4 text-brand-600" />
                 </div>
-                Fortaleza, CE - Brasil
+                {t('footer.contact.location')}
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-          <p>&copy; {new Date().getFullYear()} Aditive Maintenance. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Aditive Maintenance. {t('footer.copyright')}</p>
           <div className="mt-2 md:mt-0 flex items-center">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-            Sistemas Operacionais
+            {t('footer.status')}
           </div>
         </div>
       </div>

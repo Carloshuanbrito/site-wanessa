@@ -40,6 +40,16 @@ const Navbar: React.FC = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language?.startsWith('pt') ? 'en' : 'pt';
     i18n.changeLanguage(newLang);
+    
+    // SEO Update Instantâneo
+    document.documentElement.lang = newLang;
+    if (newLang === 'en') {
+      document.title = "Aditive Maintenance | High Performance Additive Manufacturing";
+      document.querySelector('meta[name="description"]')?.setAttribute("content", "Reduce your physical inventory and work with fast delivery. Definitive and standardized solutions in 3D printing and engineering.");
+    } else {
+      document.title = "Aditive Maintenance | Manufatura Aditiva de Alta Performance";
+      document.querySelector('meta[name="description"]')?.setAttribute("content", "Reduza os seus estoques físicos e trabalhe com entrega rápida. Soluções definitivas e padronizadas em impressão 3D e engenharia para a indústria.");
+    }
   };
 
   useEffect(() => {
@@ -90,18 +100,23 @@ const Navbar: React.FC = () => {
 
             <div className={`h-6 w-px ${isScrolled ? 'bg-slate-300' : 'bg-slate-300/50'}`}></div>
 
-            {/* BOTÃO DE IDIOMA COM BANDEIRA */}
-            <button
-              onClick={toggleLanguage}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 ${isScrolled
-                ? 'border border-slate-200 bg-white/50 text-slate-700 hover:border-brand-500'
-                : 'bg-white/20 backdrop-blur-sm border border-white/30 text-slate-800 hover:bg-white/40'
-                }`}
-            >
-              {/* Mostra a bandeira do idioma ATUAL */}
-              {isPt ? <FlagBR /> : <FlagUS />}
-              <span>{isPt ? 'PT' : 'EN'}</span>
-            </button>
+            {/* BOTÃO DE IDIOMA COM BANDEIRA E FEEDBACK VISUAL */}
+            <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-slate-200/50 rounded-full p-1 shadow-inner">
+              <button
+                onClick={() => i18n.changeLanguage('pt')}
+                title="Português"
+                className={`flex items-center justify-center p-1 rounded-full transition-all duration-300 ${isPt ? 'bg-white shadow-sm ring-1 ring-slate-200 scale-110' : 'opacity-50 hover:opacity-100 hover:scale-105'}`}
+              >
+                <FlagBR />
+              </button>
+              <button
+                onClick={() => i18n.changeLanguage('en')}
+                title="English"
+                className={`flex items-center justify-center p-1 rounded-full transition-all duration-300 ${!isPt ? 'bg-white shadow-sm ring-1 ring-slate-200 scale-110' : 'opacity-50 hover:opacity-100 hover:scale-105'}`}
+              >
+                <FlagUS />
+              </button>
+            </div>
 
             <Button onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })} variant={isScrolled ? 'primary' : 'outline'} className="shadow-lg shadow-brand-500/20">
               {t('navbar.cta')}
@@ -111,12 +126,14 @@ const Navbar: React.FC = () => {
           {/* Menu Mobile */}
           <div className="md:hidden flex items-center gap-3">
             {/* Botão Idioma Mobile */}
-            <button
-              onClick={toggleLanguage}
-              className="p-2 rounded-full bg-white/50 border border-slate-200 backdrop-blur-sm shadow-sm"
-            >
-              {isPt ? <FlagBR /> : <FlagUS />}
-            </button>
+            <div className="flex bg-white/50 border border-slate-200 backdrop-blur-sm shadow-sm rounded-full p-0.5">
+               <button onClick={() => i18n.changeLanguage('pt')} className={`p-1.5 rounded-full transition-all ${isPt ? 'bg-white shadow-sm' : 'opacity-40'}`}>
+                 <FlagBR />
+               </button>
+               <button onClick={() => i18n.changeLanguage('en')} className={`p-1.5 rounded-full transition-all ${!isPt ? 'bg-white shadow-sm' : 'opacity-40'}`}>
+                 <FlagUS />
+               </button>
+            </div>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

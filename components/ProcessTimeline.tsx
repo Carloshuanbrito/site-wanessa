@@ -1,51 +1,52 @@
 import React, { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 import { UploadCloud, ScanSearch, Printer, PackageCheck, ArrowRight, CheckCircle, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const steps = [
+const getSteps = (t: any) => [
     {
         id: 1,
-        title: "Upload Inteligente",
-        desc: "Envie seu Projeto 3D/STEP. Nossa IA analisa a geometria instantaneamente.",
+        title: t('process.steps.0.title'),
+        desc: t('process.steps.0.desc'),
         icon: UploadCloud,
         color: "blue",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
-        tooltip: "Análise automática de malha 3D e geometria"
+        tooltip: t('process.steps.0.tooltip')
     },
     {
         id: 2,
-        title: "Validação Técnica",
-        desc: "Engenheiros verificam tolerâncias e orientam o melhor material.",
+        title: t('process.steps.1.title'),
+        desc: t('process.steps.1.desc'),
         icon: ScanSearch,
         color: "blue",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
-        tooltip: "Verificação de tolerâncias e recomendação de material"
+        tooltip: t('process.steps.1.tooltip')
     },
     {
         id: 3,
-        title: "Manufatura Industrial",
-        desc: "Impressão em câmara aquecida (350°C) com controle de qualidade.",
+        title: t('process.steps.2.title'),
+        desc: t('process.steps.2.desc'),
         icon: Printer,
         color: "blue",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
-        tooltip: "Impressão 3D de alta performance"
+        tooltip: t('process.steps.2.tooltip')
     },
     {
         id: 4,
-        title: "Entrega Certificada",
-        desc: "Pós-processamento, limpeza química e envio com relatório dimensional.",
+        title: t('process.steps.3.title'),
+        desc: t('process.steps.3.desc'),
         icon: PackageCheck,
         color: "blue",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
-        tooltip: "Relatório dimensional e engenharia de qualidade"
+        tooltip: t('process.steps.3.tooltip')
     }
 ];
 
-const TiltCard = ({ step, index }: { step: any, index: number }) => {
+const TiltCard = ({ step, index, total }: { step: any, index: number, total: number }) => {
     const ref = useRef<HTMLDivElement>(null);
 
     const x = useMotionValue(0);
@@ -73,7 +74,7 @@ const TiltCard = ({ step, index }: { step: any, index: number }) => {
     return (
         <div className="relative group perspective-1000">
             {/* Conector Mobile (Linha vertical entre cards) */}
-            {index !== steps.length - 1 && (
+            {index !== total - 1 && (
                 <div className="md:hidden absolute bottom-0 left-1/2 w-0.5 h-12 bg-gradient-to-b from-slate-700 to-transparent transform translate-y-full -translate-x-1/2 z-0"></div>
             )}
 
@@ -120,6 +121,9 @@ const TiltCard = ({ step, index }: { step: any, index: number }) => {
 };
 
 const ProcessTimeline: React.FC = () => {
+    const { t } = useTranslation();
+    const stepsData = getSteps(t);
+
     return (
         <section className="py-32 bg-slate-950 relative overflow-hidden">
 
@@ -144,12 +148,12 @@ const ProcessTimeline: React.FC = () => {
                         className="inline-flex items-center justify-center px-4 py-1.5 mb-6 border border-slate-800 rounded-full bg-slate-900/50 backdrop-blur-sm"
                     >
                         <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse mr-2"></span>
-                        <span className="text-slate-400 text-xs font-mono uppercase tracking-widest">Workflow Industrial</span>
+                        <span className="text-slate-400 text-xs font-mono uppercase tracking-widest">{t('process.badge')}</span>
                     </motion.div>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Do Arquivo Digital à <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">Peça Física Certificada</span>
+                        {t('process.title')} <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">{t('process.title_highlight')}</span>
                     </h2>
                 </div>
 
@@ -158,7 +162,7 @@ const ProcessTimeline: React.FC = () => {
 
                 {/* Grid de Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mb-24">
-                    {steps.map((step, idx) => (
+                    {stepsData.map((step, idx) => (
                         <motion.div
                             key={idx}
                             initial={{ opacity: 0, scale: 0.9, y: 30 }}
@@ -167,10 +171,10 @@ const ProcessTimeline: React.FC = () => {
                             transition={{ duration: 0.6, delay: idx * 0.15 }}
                             className="relative"
                         >
-                            <TiltCard step={step} index={idx} />
+                            <TiltCard step={step} index={idx} total={stepsData.length} />
 
                             {/* Seta de Conexão (Entre cards) - Desktop only */}
-                            {idx !== steps.length - 1 && (
+                            {idx !== stepsData.length - 1 && (
                                 <div className="hidden lg:flex absolute top-1/2 -right-4 text-slate-700 transform -translate-y-1/2 z-0 translate-x-[50%]">
                                     <ArrowRight size={24} className="opacity-20" />
                                 </div>
@@ -191,25 +195,25 @@ const ProcessTimeline: React.FC = () => {
                     <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
                         <div className="flex-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-500/20 border border-brand-500/30 rounded-full text-brand-400 text-xs font-bold uppercase tracking-wider mb-4">
-                                <CheckCircle size={14} /> Case de Sucesso
+                                <CheckCircle size={14} /> {t('process.case.badge')}
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                                Válvula Especial - Indústria Química
+                                {t('process.case.title')}
                             </h3>
                             <p className="text-slate-400 mb-6 leading-relaxed">
-                                Uma peça crítica falhou na linha de produção, paralisando a operação. Com a engenharia reversa e impressão 3D em alta performance, entregamos a solução em tempo recorde.
+                                {t('process.case.desc')}
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
-                                    <p className="text-slate-500 text-xs uppercase font-bold mb-1">Problema</p>
-                                    <p className="text-white font-medium">Parada de linha por falta de peça de reposição.</p>
+                                    <p className="text-slate-500 text-xs uppercase font-bold mb-1">{t('process.case.prob_label')}</p>
+                                    <p className="text-white font-medium">{t('process.case.prob_val')}</p>
                                 </div>
                                 <div className="bg-green-500/10 p-4 rounded-xl border border-green-500/20">
-                                    <p className="text-green-400 text-xs uppercase font-bold mb-1">Resultado</p>
+                                    <p className="text-green-400 text-xs uppercase font-bold mb-1">{t('process.case.res_label')}</p>
                                     <p className="text-white font-medium flex items-center gap-2">
                                         <Clock size={16} className="text-green-400" />
-                                        Produção retomada em 3 horas.
+                                        {t('process.case.res_val')}
                                     </p>
                                 </div>
                             </div>
@@ -223,8 +227,8 @@ const ProcessTimeline: React.FC = () => {
                             </div>
                             <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md p-3 rounded-lg border border-white/10">
                                 <div className="flex justify-between items-center">
-                                    <span className="text-xs text-slate-300">Tempo de Impressão</span>
-                                    <span className="text-brand-400 font-mono font-bold">1h 45min</span>
+                                    <span className="text-xs text-slate-300">{t('process.case.time_label')}</span>
+                                    <span className="text-brand-400 font-mono font-bold">{t('process.case.time_val')}</span>
                                 </div>
                             </div>
                         </div>

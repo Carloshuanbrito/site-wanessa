@@ -72,7 +72,25 @@ const resources = {
                     { title: "Orçamento em 24h", desc: "Receba análise técnica e preço rapidamente." },
                     { title: "Isotropia Z-Axis", desc: "Fusão química de camadas superior, garantindo resistência mecânica em todas as direções." },
                     { title: "Materiais Reais", desc: "Processamos PEEK, Carbon Fiber e Nylon sem tensões internas." }
-                ]
+                ],
+                adv_title: "Por que nos escolher",
+                advantages: [
+                    { title: "Entrega Rápida", desc: "Prazo cumprido com precisão industrial" },
+                    { title: "Redução de Custos", desc: "Até 60% mais barato que métodos tradicionais" },
+                    { title: "Relatório Técnico", desc: "Documentação completa de cada peça produzida" },
+                    { title: "Qualidade Certificada", desc: "Processos auditados e rastreáveis" }
+                ],
+                serv_title: "Nossos Serviços",
+                services: [
+                    { title: "Impressão 3D Industrial", desc: "Equipamentos de alta performance para peças críticas" },
+                    { title: "Multi-Material", desc: "Amplo catálogo de polímeros e compósitos técnicos" },
+                    { title: "Escaneamento 3D", desc: "Engenharia reversa e controle dimensional" },
+                    { title: "Pós-Processamento", desc: "Acabamento, pintura e tratamentos especiais" }
+                ],
+                logistics: {
+                    title: "Cobertura Logística",
+                    desc: "Entrega de peças em todo o Brasil com foco especial em atendimento rápido portuário."
+                }
             },
             tech: {
                 badge: "H2D Tech Specs",
@@ -87,6 +105,58 @@ const resources = {
                     { title: "Câmara Aquecida", desc: "Zero warping em peças grandes." },
                     { title: "Bico Endurecido", desc: "Imprime Fibra de Carbono por milhares de horas." }
                 ]
+            },
+            process: {
+                badge: "Como Funciona",
+                title: "Processo de",
+                title_highlight: "Manufatura",
+                case: {
+                    badge: "Case de Sucesso",
+                    title: "Válvula Especial - Indústria Química",
+                    desc: "Uma peça crítica falhou na linha de produção, paralisando a operação. Com a engenharia reversa e impressão 3D em alta performance, entregamos a solução em tempo recorde.",
+                    prob_label: "Problema",
+                    prob_val: "Parada de linha por falta de peça de reposição.",
+                    res_label: "Resultado",
+                    res_val: "Produção retomada em 3 horas.",
+                    time_label: "Tempo de Impressão",
+                    time_val: "1h 45min"
+                },
+                steps: [
+                    { title: "Upload Inteligente", desc: "Envie seu projeto 3D/STEP para análise imediata", tooltip: "Análise automática de malha 3D e geometria" },
+                    { title: "Validação Técnica", desc: "Engenheiros verificam tolerâncias e materiais", tooltip: "Verificação de tolerâncias e recomendação de material" },
+                    { title: "Manufatura Industrial", desc: "Impressão em câmara aquecida com controle de qualidade", tooltip: "Impressão 3D de alta performance" },
+                    { title: "Entrega Certificada", desc: "Pós-processamento e envio com relatório dimensional", tooltip: "Relatório dimensional e engenharia de qualidade" }
+                ]
+            },
+            cta: {
+                title: "Seu projeto merece",
+                title_highlight: "materialização profissional.",
+                desc: "Envie seu projeto 3D ou STEP agora. Nossa engenharia analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
+                btn_quote: "Solicitar Cotação",
+                btn_wpp: "WhatsApp",
+                guarantee: "Resposta garantida em até 24h úteis.",
+                map_title: "Localização em Fortaleza"
+            },
+            footer: {
+                desc: "Manufatura aditiva de alta performance com polo principal em Fortaleza, CE.",
+                services: {
+                    title: "Serviços",
+                    items: ["Impressão 3D", "Multi-Material", "Escaneamento 3D", "Pós-Processamento"]
+                },
+                materials: {
+                    title: "Materiais",
+                    items: ["PEEK", "Nylon CF", "PETG", "TPU Industrial"]
+                },
+                contact: {
+                    title: "Contato",
+                    location: "Fortaleza, CE – Brasil"
+                },
+                copyright: "Todos os direitos reservados.",
+                status: "Sistemas Operacionais"
+            },
+            floating: {
+                aria: "Fale conosco no WhatsApp",
+                backToTop: "Voltar ao topo"
             }
         }
     },
@@ -157,7 +227,25 @@ const resources = {
                     { title: "24h Quoting", desc: "Get technical analysis and pricing quickly." },
                     { title: "Z-Axis Isotropy", desc: "Superior chemical layer fusion, ensuring mechanical strength in all directions." },
                     { title: "Real Materials", desc: "We process PEEK, Carbon Fiber, and Nylon without internal stresses." }
-                ]
+                ],
+                adv_title: "Why choose us",
+                advantages: [
+                    { title: "Fast Delivery", desc: "Deadline met with industrial precision" },
+                    { title: "Cost Reduction", desc: "Up to 60% cheaper than traditional methods" },
+                    { title: "Technical Report", desc: "Complete documentation of each produced part" },
+                    { title: "Certified Quality", desc: "Audited and traceable processes" }
+                ],
+                serv_title: "Our Services",
+                services: [
+                    { title: "Industrial 3D Printing", desc: "High-performance equipment for critical parts" },
+                    { title: "Multi-Material", desc: "Wide catalog of technical polymers and composites" },
+                    { title: "3D Scanning", desc: "Reverse engineering and dimensional control" },
+                    { title: "Post-Processing", desc: "Finishing, painting, and special treatments" }
+                ],
+                logistics: {
+                    title: "Logistics Coverage",
+                    desc: "Delivery of parts throughout Brazil with a special focus on fast port service."
+                }
             },
             tech: {
                 badge: "H2D Tech Specs",
@@ -172,6 +260,58 @@ const resources = {
                     { title: "Heated Chamber", desc: "Zero warping on large parts." },
                     { title: "Hardened Nozzle", desc: "Prints Carbon Fiber for thousands of hours." }
                 ]
+            },
+            process: {
+                badge: "How It Works",
+                title: "Manufacturing",
+                title_highlight: "Process",
+                case: {
+                    badge: "Success Case",
+                    title: "Specialty Valve - Chemical Industry",
+                    desc: "A critical part failed on the production line, halting operations. Through reverse engineering and high-performance 3D printing, we delivered the solution in record time.",
+                    prob_label: "Problem",
+                    prob_val: "Line stoppage due to missing replacement part.",
+                    res_label: "Result",
+                    res_val: "Production resumed in 3 hours.",
+                    time_label: "Print Time",
+                    time_val: "1h 45min"
+                },
+                steps: [
+                    { title: "Smart Upload", desc: "Send your 3D/STEP project for immediate analysis", tooltip: "Automatic 3D mesh and geometry analysis" },
+                    { title: "Technical Validation", desc: "Engineers verify tolerances and materials", tooltip: "Tolerance verification and material recommendation" },
+                    { title: "Industrial Manufacturing", desc: "Printing in heated chamber with quality control", tooltip: "High-performance 3D printing" },
+                    { title: "Certified Delivery", desc: "Post-processing and shipping with dimensional report", tooltip: "Dimensional report and quality engineering" }
+                ]
+            },
+            cta: {
+                title: "Your project deserves",
+                title_highlight: "professional materialization.",
+                desc: "Send your 3D or STEP project now. Our engineering team analyzes feasibility and returns with a quote and ideal material suggestion.",
+                btn_quote: "Request a Quote",
+                btn_wpp: "WhatsApp",
+                guarantee: "Guaranteed response within 24 business hours.",
+                map_title: "Location in Fortaleza"
+            },
+            footer: {
+                desc: "High-performance additive manufacturing with main hub in Fortaleza, CE.",
+                services: {
+                    title: "Services",
+                    items: ["3D Printing", "Multi-Material", "3D Scanning", "Post-Processing"]
+                },
+                materials: {
+                    title: "Materials",
+                    items: ["PEEK", "Nylon CF", "PETG", "Industrial TPU"]
+                },
+                contact: {
+                    title: "Contact",
+                    location: "Fortaleza, CE – Brazil"
+                },
+                copyright: "All rights reserved.",
+                status: "Operational Systems"
+            },
+            floating: {
+                aria: "Contact us on WhatsApp",
+                backToTop: "Back to top"
             }
         }
     }
@@ -181,7 +321,7 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        resources, // Usa a variável que criamos acima
+        resources,
         fallbackLng: 'pt',
         interpolation: {
             escapeValue: false

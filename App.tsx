@@ -9,11 +9,14 @@ import TechSpecs from './components/TechSpecs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import BackToTop from './components/BackToTop';
+import ReadingProgress from './components/ReadingProgress';
 import './index.css';
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-brand-500 selection:text-white">
+      <ReadingProgress />
       <Navbar />
       <main>
         <Hero />
@@ -26,6 +29,7 @@ function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <BackToTop />
     </div>
   );
 }
