@@ -28,37 +28,102 @@
         "btn_datasheet": "Ver tabela de propriedades",
         "recommended": "Recomendado",
         "general": {
-            "title": "Alta Resistência",
-            "desc": "Soluções definitivas para peças que exigem durabilidade.",
+            "title": "Materiais de Uso Geral",
+            "desc": "Materiais versáteis para prototipagem e aplicações mecânicas padrão.",
             "items": [
                 {
-                    "name": "Plásticos de Alta Resistência",
-                    "desc": "Materiais padronizados para aplicações robustas."
-                },
-                {
-                    "name": "PET",
-                    "desc": "Material versátil com boa resistência química e mecânica."
+                    "name": "PETG (Polietileno Tereftalato Glicol)",
+                    "desc": "Material versátil com excelente equilíbrio entre resistência, flexibilidade e facilidade de impressão.",
+                    "properties": [
+                        "Resistência mecânica: ⭐⭐⭐ (média)",
+                        "Temperatura de trabalho: ~80°C",
+                        "Flexibilidade moderada (boa resistência a impacto)",
+                        "Boa resistência à umidade e intempéries",
+                        "Resistência química: ⭐⭐⭐",
+                        "Boa transparência (em algumas variações)",
+                        "Boa estabilidade dimensional"
+                    ],
+                    "applications": [
+                        "Caixas e proteções (elétrica/eletrônica)",
+                        "Suportes e peças de uso geral",
+                        "Peças externas expostas ao clima",
+                        "Protótipos funcionais",
+                        "Adaptadores e conexões leves"
+                    ]
                 }
             ]
         },
         "engineering": {
-            "title": "Compósitos",
-            "desc": "Materiais reforçados para máxima performance estrutural.",
+            "title": "Engenharia e Compósitos",
+            "desc": "Polímeros técnicos reforçados para alta performance estrutural e térmica.",
             "items": [
                 {
-                    "name": "PA com Fibra de Carbono",
-                    "desc": "Nylon reforçado com fibra de carbono. Rigidez estrutural máxima e leveza."
+                    "name": "Nylon CF (Nylon com fibra de carbono)",
+                    "desc": "Compósito de alta performance que combina a tenacidade do nylon com a rigidez da fibra de carbono.",
+                    "properties": [
+                        "Resistência mecânica: ⭐⭐⭐⭐ (muito alta)",
+                        "Temperatura de trabalho: ~120–150°C",
+                        "Alta rigidez (fibra reduz deformação)",
+                        "Boa resistência ao desgaste",
+                        "Resistência química: ⭐⭐⭐⭐",
+                        "Resistência a impacto moderada",
+                        "Baixa deformação sob carga (creep reduzido)"
+                    ],
+                    "applications": [
+                        "Engrenagens e componentes mecânicos",
+                        "Suportes estruturais (brackets)",
+                        "Ferramentas e gabaritos",
+                        "Peças técnicas leves e resistentes",
+                        "Substituição de plásticos industriais"
+                    ]
                 },
                 {
-                    "name": "PA com Fibra de Vidro",
-                    "desc": "Nylon reforçado com fibra de vidro. Alta estabilidade dimensional."
+                    "name": "TPU (Industrial – flexível)",
+                    "desc": "Poliuretano Termoplástico para peças que exigem flexibilidade, absorção de impacto e resistência à abrasão.",
+                    "properties": [
+                        "Resistência mecânica estrutural: ⭐⭐",
+                        "Temperatura de trabalho: ~80–100°C",
+                        "Flexibilidade: ⭐⭐⭐⭐⭐ (alta elasticidade)",
+                        "Alta resistência a impacto",
+                        "Excelente resistência à abrasão",
+                        "Boa resistência química",
+                        "Alta capacidade de absorção de vibração"
+                    ],
+                    "applications": [
+                        "Vedações e juntas",
+                        "Amortecedores de impacto/vibração",
+                        "Pés antiderrapantes",
+                        "Capas protetoras",
+                        "Mangueiras e conexões flexíveis"
+                    ]
                 }
             ]
         },
         "advanced": {
-            "title": "Outros",
-            "desc": "Consulte-nos para materiais específicos.",
-            "items": []
+            "title": "Polímeros de Ultra-Performance",
+            "desc": "Materiais para condições extremas de temperatura e resistência química.",
+            "items": [
+                {
+                    "name": "PEEK (Polyether Ether Ketone)",
+                    "desc": "O ápice dos polímeros de engenharia, capaz de substituir metais em aplicações críticas.",
+                    "properties": [
+                        "Resistência mecânica: ⭐⭐⭐⭐⭐ (extremamente alta)",
+                        "Temperatura de trabalho: até ~250°C",
+                        "Alta rigidez (pouca deformação)",
+                        "Resistência química: ⭐⭐⭐⭐⭐ (ácidos, solventes, combustíveis)",
+                        "Excelente resistência ao desgaste",
+                        "Baixa absorção de umidade",
+                        "Alta estabilidade dimensional"
+                    ],
+                    "applications": [
+                        "Peças próximas a motores ou fontes de calor intenso",
+                        "Componentes estruturais críticos",
+                        "Substituição de peças metálicas",
+                        "Indústria naval, óleo & gás, aeroespacial",
+                        "Válvulas, buchas e suportes de alta carga"
+                    ]
+                }
+            ]
         }
     },
     "why": {
@@ -83,6 +148,8 @@
                 "desc": "Peças de reposição em plástico a partir de peças quebradas."
             }
         ],
+        "adv_title": "Por que nos escolher",
+        "serv_title": "Nossos Serviços",
         "services": [
             {
                 "title": "Locação Industrial",
@@ -99,6 +166,48 @@
             {
                 "title": "Prototipagem",
                 "desc": "Prototipagem funcional com gravação de marca."
+            }
+        ],
+        "logistics": {
+            "title": "Cobertura Logística",
+            "desc": "Entrega de peças em todo o Brasil com foco especial em atendimento rápido portuário."
+        }
+    },
+    "process": {
+        "badge": "Como Funciona",
+        "title": "Processo de",
+        "title_highlight": "Manufatura",
+        "case": {
+            "badge": "Case de Sucesso",
+            "title": "Válvula Especial - Indústria Química",
+            "desc": "Uma peça crítica falhou na linha de produção, paralisando a operação. Com a engenharia reversa e impressão 3D em alta performance, entregamos a solução em tempo recorde.",
+            "prob_label": "Problema",
+            "prob_val": "Parada de linha por falta de peça de reposição.",
+            "res_label": "Resultado",
+            "res_val": "Produção retomada em 3 horas.",
+            "time_label": "Tempo de Impressão",
+            "time_val": "1h 45min"
+        },
+        "steps": [
+            {
+                "title": "Upload Inteligente",
+                "desc": "Envie seu projeto 3D/STEP para análise imediata",
+                "tooltip": "Análise automática de malha 3D e geometria"
+            },
+            {
+                "title": "Validação Técnica",
+                "desc": "Engenheiros verificam tolerâncias e materiais",
+                "tooltip": "Verificação de tolerâncias e recomendação de material"
+            },
+            {
+                "title": "Manufatura Industrial",
+                "desc": "Impressão em câmara aquecida com controle de qualidade",
+                "tooltip": "Impressão 3D de alta performance"
+            },
+            {
+                "title": "Entrega Certificada",
+                "desc": "Pós-processamento e envio com relatório dimensional",
+                "tooltip": "Relatório dimensional e engenharia de qualidade"
             }
         ]
     },
@@ -124,5 +233,35 @@
                 "desc": "Imprime Fibra de Carbono por milhares de horas."
             }
         ]
+    },
+    "cta": {
+        "title": "Seu projeto merece",
+        "title_highlight": "materialização profissional.",
+        "desc": "Envie seu projeto 3D ou STEP agora. Nossa engenharia analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
+        "btn_quote": "Solicitar Cotação",
+        "btn_wpp": "WhatsApp",
+        "guarantee": "Resposta garantida em até 24h úteis.",
+        "map_title": "Localização em Fortaleza"
+    },
+    "footer": {
+        "desc": "Manufatura aditiva de alta performance com polo principal em Fortaleza, CE.",
+        "services": {
+            "title": "Serviços",
+            "items": ["Impressão 3D", "Multi-Material", "Escaneamento 3D", "Pós-Processamento"]
+        },
+        "materials": {
+            "title": "Materiais",
+            "items": ["PEEK", "Nylon CF", "PETG", "TPU Industrial"]
+        },
+        "contact": {
+            "title": "Contato",
+            "location": "Fortaleza, CE – Brasil"
+        },
+        "copyright": "Todos os direitos reservados.",
+        "status": "Sistemas Operacionais"
+    },
+    "floating": {
+        "aria": "Fale conosco no WhatsApp",
+        "backToTop": "Voltar ao topo"
     }
 }

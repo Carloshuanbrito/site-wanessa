@@ -28,37 +28,102 @@
         "btn_datasheet": "View datasheet",
         "recommended": "Recommended",
         "general": {
-            "title": "High Resistance",
-            "desc": "Definitive solutions for durable parts.",
+            "title": "General Purpose Materials",
+            "desc": "Versatile materials for prototyping and standard mechanical applications.",
             "items": [
                 {
-                    "name": "High Resistance Plastics",
-                    "desc": "Standardized materials for robust applications."
-                },
-                {
-                    "name": "PET",
-                    "desc": "Versatile material with good chemical and mechanical resistance."
+                    "name": "PETG (Polyethylene Terephthalate Glycol)",
+                    "desc": "Versatile material with an excellent balance between strength, flexibility, and printability.",
+                    "properties": [
+                        "Mechanical resistance: ⭐⭐⭐ (medium)",
+                        "Working temperature: ~80°C",
+                        "Moderate flexibility (good impact resistance)",
+                        "Good moisture and weather resistance",
+                        "Chemical resistance: ⭐⭐⭐",
+                        "Good transparency (in some variations)",
+                        "Good dimensional stability"
+                    ],
+                    "applications": [
+                        "Enclosures and shields (electrical/electronic)",
+                        "General-purpose supports and parts",
+                        "External parts exposed to weather",
+                        "Functional prototypes",
+                        "Lightweight adapters and connections"
+                    ]
                 }
             ]
         },
         "engineering": {
-            "title": "Composites",
-            "desc": "Reinforced materials for maximum structural performance.",
+            "title": "Engineering & Composites",
+            "desc": "Technical polymers reinforced for high structural and thermal performance.",
             "items": [
                 {
-                    "name": "PA with Carbon Fiber",
-                    "desc": "Nylon reinforced with carbon fiber. Maximum structural rigidity and lightweight."
+                    "name": "Nylon CF (Carbon Fiber Reinforced Nylon)",
+                    "desc": "High-performance composite that combines the toughness of nylon with the rigidity of carbon fiber.",
+                    "properties": [
+                        "Mechanical resistance: ⭐⭐⭐⭐ (very high)",
+                        "Working temperature: ~120–150°C",
+                        "High rigidity (fiber reduces deformation)",
+                        "Good wear resistance",
+                        "Chemical resistance: ⭐⭐⭐⭐",
+                        "Moderate impact resistance",
+                        "Low deformation under load (low creep)"
+                    ],
+                    "applications": [
+                        "Gears and mechanical components",
+                        "Structural brackets",
+                        "Tools and jigs",
+                        "Lightweight technical parts",
+                        "Industrial plastics replacement"
+                    ]
                 },
                 {
-                    "name": "PA with Glass Fiber",
-                    "desc": "Nylon reinforced with glass fiber. High dimensional stability."
+                    "name": "TPU (Industrial – flexible)",
+                    "desc": "Thermoplastic Polyurethane for parts requiring flexibility, impact absorption, and abrasion resistance.",
+                    "properties": [
+                        "Structural mechanical resistance: ⭐⭐",
+                        "Working temperature: ~80–100°C",
+                        "Flexibility: ⭐⭐⭐⭐⭐ (high elasticity)",
+                        "High impact resistance",
+                        "Excellent abrasion resistance",
+                        "Good chemical resistance",
+                        "High vibration absorption capacity"
+                    ],
+                    "applications": [
+                        "Seals and gaskets",
+                        "Impact/vibration dampers",
+                        "Non-slip feet",
+                        "Protective covers",
+                        "Flexible hoses and connections"
+                    ]
                 }
             ]
         },
         "advanced": {
-            "title": "Others",
-            "desc": "Contact us for specific materials.",
-            "items": []
+            "title": "Ultra-Performance Polymers",
+            "desc": "Materials for extreme temperature conditions and chemical resistance.",
+            "items": [
+                {
+                    "name": "PEEK (Polyether Ether Ketone)",
+                    "desc": "The pinnacle of engineering polymers, capable of replacing metals in critical applications.",
+                    "properties": [
+                        "Mechanical resistance: ⭐⭐⭐⭐⭐ (extremely high)",
+                        "Working temperature: up to ~250°C",
+                        "High rigidity (low deformation)",
+                        "Chemical resistance: ⭐⭐⭐⭐⭐ (acids, solvents, fuels)",
+                        "Excellent wear resistance",
+                        "Low moisture absorption",
+                        "High dimensional stability"
+                    ],
+                    "applications": [
+                        "Parts near engines or intense heat sources",
+                        "Critical structural components",
+                        "Metal replacement",
+                        "Naval, Oil & Gas, Aerospace industries",
+                        "Valves, bushings, and high-load supports"
+                    ]
+                }
+            ]
         }
     },
     "why": {
@@ -83,6 +148,8 @@
                 "desc": "Plastic replacement parts from broken parts."
             }
         ],
+        "adv_title": "Why choose us",
+        "serv_title": "Our Services",
         "services": [
             {
                 "title": "Industrial Rental",
@@ -99,6 +166,48 @@
             {
                 "title": "Prototyping",
                 "desc": "Functional prototyping with brand engraving."
+            }
+        ],
+        "logistics": {
+            "title": "Logistics Coverage",
+            "desc": "Delivery of parts throughout Brazil with a special focus on fast port service."
+        }
+    },
+    "process": {
+        "badge": "How It Works",
+        "title": "Manufacturing",
+        "title_highlight": "Process",
+        "case": {
+            "badge": "Success Case",
+            "title": "Specialty Valve - Chemical Industry",
+            "desc": "A critical part failed on the production line, halting operations. Through reverse engineering and high-performance 3D printing, we delivered the solution in record time.",
+            "prob_label": "Problem",
+            "prob_val": "Line stoppage due to missing replacement part.",
+            "res_label": "Result",
+            "res_val": "Production resumed in 3 hours.",
+            "time_label": "Print Time",
+            "time_val": "1h 45min"
+        },
+        "steps": [
+            {
+                "title": "Smart Upload",
+                "desc": "Send your 3D/STEP project for immediate analysis",
+                "tooltip": "Automatic 3D mesh and geometry analysis"
+            },
+            {
+                "title": "Technical Validation",
+                "desc": "Engineers verify tolerances and materials",
+                "tooltip": "Tolerance verification and material recommendation"
+            },
+            {
+                "title": "Industrial Manufacturing",
+                "desc": "Printing in heated chamber with quality control",
+                "tooltip": "High-performance 3D printing"
+            },
+            {
+                "title": "Certified Delivery",
+                "desc": "Post-processing and shipping with dimensional report",
+                "tooltip": "Dimensional report and quality engineering"
             }
         ]
     },
@@ -124,5 +233,35 @@
                 "desc": "Prints Carbon Fiber for thousands of hours."
             }
         ]
+    },
+    "cta": {
+        "title": "Your project deserves",
+        "title_highlight": "professional materialization.",
+        "desc": "Send your 3D or STEP project now. Our engineering team analyzes feasibility and returns with a quote and ideal material suggestion.",
+        "btn_quote": "Request a Quote",
+        "btn_wpp": "WhatsApp",
+        "guarantee": "Guaranteed response within 24 business hours.",
+        "map_title": "Location in Fortaleza"
+    },
+    "footer": {
+        "desc": "High-performance additive manufacturing with main hub in Fortaleza, CE.",
+        "services": {
+            "title": "Services",
+            "items": ["3D Printing", "Multi-Material", "3D Scanning", "Post-Processing"]
+        },
+        "materials": {
+            "title": "Materials",
+            "items": ["PEEK", "Nylon CF", "PETG", "Industrial TPU"]
+        },
+        "contact": {
+            "title": "Contact",
+            "location": "Fortaleza, CE – Brazil"
+        },
+        "copyright": "All rights reserved.",
+        "status": "Operational Systems"
+    },
+    "floating": {
+        "aria": "Contact us on WhatsApp",
+        "backToTop": "Back to top"
     }
 }
