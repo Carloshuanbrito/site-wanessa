@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 import { UploadCloud, ScanSearch, Printer, PackageCheck, ArrowRight, CheckCircle, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import chemicalValveCase from './fotos/chemical_valve_case.png';
 
 const getSteps = (t: any) => [
     {
@@ -9,7 +10,7 @@ const getSteps = (t: any) => [
         title: t('process.steps.0.title'),
         desc: t('process.steps.0.desc'),
         icon: UploadCloud,
-        color: "blue",
+        colorClasses: "bg-blue-500/10 border-blue-500/20 text-blue-400",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
         tooltip: t('process.steps.0.tooltip')
@@ -19,7 +20,7 @@ const getSteps = (t: any) => [
         title: t('process.steps.1.title'),
         desc: t('process.steps.1.desc'),
         icon: ScanSearch,
-        color: "blue",
+        colorClasses: "bg-blue-500/10 border-blue-500/20 text-blue-400",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
         tooltip: t('process.steps.1.tooltip')
@@ -29,7 +30,7 @@ const getSteps = (t: any) => [
         title: t('process.steps.2.title'),
         desc: t('process.steps.2.desc'),
         icon: Printer,
-        color: "blue",
+        colorClasses: "bg-blue-500/10 border-blue-500/20 text-blue-400",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
         tooltip: t('process.steps.2.tooltip')
@@ -39,7 +40,7 @@ const getSteps = (t: any) => [
         title: t('process.steps.3.title'),
         desc: t('process.steps.3.desc'),
         icon: PackageCheck,
-        color: "blue",
+        colorClasses: "bg-blue-500/10 border-blue-500/20 text-blue-400",
         glow: "shadow-blue-500/50",
         border: "group-hover:border-blue-500/60",
         tooltip: t('process.steps.3.tooltip')
@@ -73,9 +74,11 @@ const TiltCard = ({ step, index, total }: { step: any, index: number, total: num
 
     return (
         <div className="relative group perspective-1000">
-            {/* Conector Mobile (Linha vertical entre cards) */}
+            {/* Conector Mobile (Seta para baixo entre cards) */}
             {index !== total - 1 && (
-                <div className="md:hidden absolute bottom-0 left-1/2 w-0.5 h-12 bg-gradient-to-b from-slate-700 to-transparent transform translate-y-full -translate-x-1/2 z-0"></div>
+                <div className="md:hidden absolute -bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-brand-500">
+                    <ArrowRight size={28} className="opacity-80 rotate-90" />
+                </div>
             )}
 
             <motion.div
@@ -96,14 +99,18 @@ const TiltCard = ({ step, index, total }: { step: any, index: number, total: num
                 {/* Header do Card */}
                 <div style={{ transform: "translateZ(30px)" }}>
                     {/* Ícone com brilho colorido e Tooltip */}
-                    <div title={step.tooltip} className={`relative w-14 h-14 rounded-xl bg-${step.color}-500/10 flex items-center justify-center mb-6 border border-${step.color}-500/20 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all duration-500 cursor-help`}>
-                        <step.icon size={28} className={`text-${step.color}-400`} />
+                    <div title={step.tooltip} className={`relative w-14 h-14 rounded-xl flex items-center justify-center mb-4 border group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all duration-500 cursor-help ${step.colorClasses.split(' ').filter(c => !c.startsWith('text-')).join(' ')}`}>
+                        <step.icon size={28} className={step.colorClasses.split(' ').find(c => c.startsWith('text-'))} />
+                    </div>
+
+                    <div className="inline-flex items-center gap-2 px-2 py-1 bg-slate-800 border border-slate-700 rounded-md mb-3">
+                        <span className="text-xs font-bold text-brand-400">PASSO 0{step.id}</span>
                     </div>
 
                     <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-400 transition-all">
                         {step.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed border-l-2 border-slate-700 pl-4 group-hover:border-${step.color}-500/50 transition-colors">
+                    <p className={`text-white/90 text-sm leading-relaxed border-l-2 border-slate-600 pl-4 transition-colors ${step.border}`}>
                         {step.desc}
                     </p>
                 </div>
@@ -151,7 +158,7 @@ const ProcessTimeline: React.FC = () => {
                         <span className="text-slate-400 text-xs font-mono uppercase tracking-widest">{t('process.badge')}</span>
                     </motion.div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
                         {t('process.title')} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">{t('process.title_highlight')}</span>
                     </h2>
@@ -175,8 +182,8 @@ const ProcessTimeline: React.FC = () => {
 
                             {/* Seta de Conexão (Entre cards) - Desktop only */}
                             {idx !== stepsData.length - 1 && (
-                                <div className="hidden lg:flex absolute top-1/2 -right-4 text-slate-700 transform -translate-y-1/2 z-0 translate-x-[50%]">
-                                    <ArrowRight size={24} className="opacity-20" />
+                                <div className="hidden lg:flex absolute top-1/2 -right-4 translate-x-1/2 -translate-y-1/2 z-[100] pointer-events-none">
+                                    <ArrowRight size={36} className="text-brand-400 opacity-90 drop-shadow-[0_0_8px_rgba(56,189,248,1)]" />
                                 </div>
                             )}
                         </motion.div>
@@ -194,13 +201,13 @@ const ProcessTimeline: React.FC = () => {
 
                     <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-500/20 border border-brand-500/30 rounded-full text-brand-400 text-xs font-bold uppercase tracking-wider mb-4">
-                                <CheckCircle size={14} /> {t('process.case.badge')}
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-500/40 border border-brand-300/60 rounded-full text-white text-xs font-bold uppercase tracking-widest mb-4 shadow-[0_0_20px_rgba(14,165,233,0.5)]">
+                                <CheckCircle size={14} className="text-brand-300" /> {t('process.case.badge')}
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                                 {t('process.case.title')}
                             </h3>
-                            <p className="text-slate-400 mb-6 leading-relaxed">
+                            <p className="text-white/90 mb-6 leading-relaxed">
                                 {t('process.case.desc')}
                             </p>
 
@@ -220,15 +227,13 @@ const ProcessTimeline: React.FC = () => {
                         </div>
 
                         <div className="w-full md:w-1/3 aspect-video bg-slate-800 rounded-xl overflow-hidden relative group">
-                            {/* Placeholder visual para o case */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-transparent"></div>
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <Printer size={48} className="text-slate-600 opacity-50" />
-                            </div>
-                            <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md p-3 rounded-lg border border-white/10">
+                            {/* Imagem Real do Case */}
+                            <img src={chemicalValveCase} alt="Válvula Especial Impressa 3D" className="w-full h-full object-cover transform opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-transparent pointer-events-none"></div>
+                            <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md p-3 rounded-lg border border-white/20">
                                 <div className="flex justify-between items-center">
-                                    <span className="text-xs text-slate-300">{t('process.case.time_label')}</span>
-                                    <span className="text-brand-400 font-mono font-bold">{t('process.case.time_val')}</span>
+                                    <span className="text-xs text-slate-100 uppercase font-semibold">{t('process.case.time_label')}</span>
+                                    <span className="text-white font-mono font-bold text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">{t('process.case.time_val')}</span>
                                 </div>
                             </div>
                         </div>

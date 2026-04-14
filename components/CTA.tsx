@@ -41,17 +41,30 @@ const CTA: React.FC = () => {
               {t('cta.desc')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button onClick={() => window.location.href='mailto:contato@aditivemaintenance.com.br'} variant="primary" className="w-full sm:w-auto py-4 px-8 text-lg shadow-brand-500/25 shadow-lg group">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-stretch mt-8">
+              <Button onClick={() => window.location.href='mailto:contato@aditivemaintenance.com.br'} variant="primary" className="w-full sm:w-auto py-4 px-8 text-lg shadow-brand-500/25 shadow-lg group flex flex-col justify-center">
                 <span className="flex items-center justify-center gap-2">
                   {t('cta.btn_quote')} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
 
-              <a href="https://wa.me/5585997629938" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium hover:bg-green-600 transition-colors border border-green-500/50 backdrop-blur-sm bg-green-500/20">
-                <MessageSquare size={20} />
-                {t('cta.btn_wpp')}
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="https://wa.me/5585999999999" target="_blank" rel="noopener noreferrer" className="flex-1 flex flex-col items-center justify-center gap-1 px-6 py-3 rounded-xl text-white font-medium hover:bg-green-600 transition-colors border border-green-500/50 backdrop-blur-sm bg-green-500/20">
+                  <div className="flex items-center gap-2 text-md font-bold">
+                    <MessageSquare size={18} />
+                    WhatsApp
+                  </div>
+                  <span className="text-[10px] text-green-200 text-center">Resposta rápida via WhatsApp em horário comercial</span>
+                </a>
+
+                <a href="tel:+5585999999999" className="flex-1 flex flex-col items-center justify-center gap-1 px-6 py-3 rounded-xl text-white font-medium hover:bg-blue-600 transition-colors border border-blue-500/50 backdrop-blur-sm bg-blue-500/20">
+                  <div className="flex items-center gap-2 text-md font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
+                    +55 (85) 99999-9999
+                  </div>
+                  <span className="text-[10px] text-blue-200 text-center">Resposta imediata por ligação</span>
+                </a>
+              </div>
             </div>
 
             <p className="mt-8 text-sm text-slate-500">

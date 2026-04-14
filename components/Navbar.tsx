@@ -44,10 +44,10 @@ const Navbar: React.FC = () => {
     // SEO Update Instantâneo
     document.documentElement.lang = newLang;
     if (newLang === 'en') {
-      document.title = "Aditive Maintenance | High Performance Additive Manufacturing";
+      document.title = "Blue Printing 3D | High Performance Additive Manufacturing";
       document.querySelector('meta[name="description"]')?.setAttribute("content", "Reduce your physical inventory and work with fast delivery. Definitive and standardized solutions in 3D printing and engineering.");
     } else {
-      document.title = "Aditive Maintenance | Manufatura Aditiva de Alta Performance";
+      document.title = "Blue Printing 3D | Manufatura Aditiva de Alta Performance";
       document.querySelector('meta[name="description"]')?.setAttribute("content", "Reduza os seus estoques físicos e trabalhe com entrega rápida. Soluções definitivas e padronizadas em impressão 3D e engenharia para a indústria.");
     }
   };
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: t('navbar.materials'), href: '#materiais' },
-    { name: t('navbar.tech'), href: '#tecnologia' },
+    { name: t('navbar.tech'), href: '#aplicacoes' },
     { name: t('navbar.services'), href: '#servicos' },
   ];
 
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
 
           <div className="flex items-center gap-3">
             <Box className="h-8 w-8 text-brand-600" strokeWidth={2.5} />
-            <span className="text-xl font-bold text-slate-900 tracking-tight">Aditive Maintenance</span>
+            <span className="text-xl font-bold text-slate-900 tracking-tight">{t('hero.badge')}</span>
           </div>
 
           {/* Menu Desktop */}

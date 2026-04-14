@@ -7,10 +7,10 @@
         "brand": "Aditive Maintenance"
     },
     "hero": {
-        "badge": "Aditive Maintenance",
-        "title_main": "Engenharia",
-        "title_gradient": "Materializada.",
-        "description": "Reduza seus estoques físicos. Trabalhe com entrega rápida ou crie seu próprio estoque digital de peças. Entrega de peças em todo Brasil com atendimento rápido portuário.",
+        "badge": "Blue Printing 3D",
+        "title_main": "Peças",
+        "title_gradient": "sob demanda.",
+        "description": "Fabricação para manutenção, reposição e desenvolvimento de peças técnicas. Produzimos sob medida, mesmo para itens difíceis de encontrar no mercado.",
         "cta_primary": "Iniciar Projeto",
         "cta_secondary": "Ver Materiais",
         "stat_quote": "Cotação",
@@ -29,7 +29,7 @@
         "recommended": "Recomendado",
         "general": {
             "title": "Materiais de Uso Geral",
-            "desc": "Materiais versáteis para prototipagem e aplicações mecânicas padrão.",
+            "desc": "Ideal para usos não críticos sem exigências mecânicas.",
             "items": [
                 {
                     "name": "PETG (Polietileno Tereftalato Glicol)",
@@ -40,7 +40,6 @@
                         "Flexibilidade moderada (boa resistência a impacto)",
                         "Boa resistência à umidade e intempéries",
                         "Resistência química: ⭐⭐⭐",
-                        "Boa transparência (em algumas variações)",
                         "Boa estabilidade dimensional"
                     ],
                     "applications": [
@@ -132,40 +131,40 @@
         "subtitle": "Soluções definitivas para sua indústria com tecnologia de ponta.",
         "advantages": [
             {
-                "title": "Redução de Leadtime",
-                "desc": "Agilidade na entrega para manter sua operação rodando."
+                "title": "Produção rápida",
+                "desc": "Dias, não semanas."
             },
             {
-                "title": "Redução de Custos",
-                "desc": "Economia significativa na importação de peças."
+                "title": "Sem necessidade de molde",
+                "desc": "Sem custos de ferramentais."
             },
             {
-                "title": "Projetos Confiáveis",
-                "desc": "Arquivos de engenharia rápidos e confiáveis (Projeto 3D)."
+                "title": "Alta Disponibilidade",
+                "desc": "Ideal para peças descontinuadas ou urgentes."
             },
             {
-                "title": "Engenharia Reversa",
-                "desc": "Peças de reposição em plástico a partir de peças quebradas."
+                "title": "Customização",
+                "desc": "Atendimento técnico personalizado."
             }
         ],
         "adv_title": "Por que nos escolher",
         "serv_title": "Nossos Serviços",
         "services": [
             {
-                "title": "Locação Industrial",
-                "desc": "Locação de impressoras 3D industriais para sua planta."
+                "title": "Ensaios Mecânicos",
+                "desc": "Possibilidade de ensaios mecânicos sob demanda."
             },
             {
-                "title": "Impressão Média Escala",
-                "desc": "Produção seriada sem os altos custos de moldes."
+                "title": "Atendimento Técnico Personalizado",
+                "desc": "Desenvolvido por profissional com experiência real de operação e manutenção em campo."
             },
             {
-                "title": "Digitalização",
-                "desc": "Digitalização e projeto de peças de engenharia."
+                "title": "Redução de Custos",
+                "desc": "Até 60% mais barato que importação."
             },
             {
-                "title": "Prototipagem",
-                "desc": "Prototipagem funcional com gravação de marca."
+                "title": "Matéria adequada com características mecânicas compatíveis",
+                "desc": "Compatibilidade térmica, de pressão e química."
             }
         ],
         "logistics": {
@@ -178,7 +177,7 @@
         "title": "Processo de",
         "title_highlight": "Manufatura",
         "case": {
-            "badge": "Case de Sucesso",
+            "badge": "Exemplo de serviço concluído com sucesso",
             "title": "Válvula Especial - Indústria Química",
             "desc": "Uma peça crítica falhou na linha de produção, paralisando a operação. Com a engenharia reversa e impressão 3D em alta performance, entregamos a solução em tempo recorde.",
             "prob_label": "Problema",
@@ -190,68 +189,85 @@
         },
         "steps": [
             {
-                "title": "Upload Inteligente",
-                "desc": "Envie seu projeto 3D/STEP para análise imediata",
-                "tooltip": "Análise automática de malha 3D e geometria"
+                "title": "Avaliação Técnica",
+                "desc": "Avaliação de viabilidade técnica — Até 48h.",
+                "tooltip": "Análise ágil"
             },
             {
-                "title": "Validação Técnica",
-                "desc": "Engenheiros verificam tolerâncias e materiais",
-                "tooltip": "Verificação de tolerâncias e recomendação de material"
+                "title": "Envio de Modelo",
+                "desc": "Envio do modelo escaneado ou peça física.",
+                "tooltip": "Digitalização"
             },
             {
-                "title": "Manufatura Industrial",
-                "desc": "Impressão em câmara aquecida com controle de qualidade",
-                "tooltip": "Impressão 3D de alta performance"
+                "title": "Produção",
+                "desc": "Até 3 dias após a conclusão do passo 2.",
+                "tooltip": "Manufatura de precisão"
             },
             {
-                "title": "Entrega Certificada",
-                "desc": "Pós-processamento e envio com relatório dimensional",
-                "tooltip": "Relatório dimensional e engenharia de qualidade"
+                "title": "Logística",
+                "desc": "Envio — Nacional.",
+                "tooltip": "Logística"
             }
         ]
     },
     "tech": {
-        "badge": "Especificações Técnicas",
-        "title": "Controle Térmico",
-        "title_highlight": "Absoluto.",
-        "desc": "Garantia de propriedades mecânicas superiores através de controle rigoroso de temperatura.",
+        "badge": "Múltiplas Aplicações",
+        "title": "Aplicações",
+        "title_highlight": "",
+        "desc": "Ideal para uso industrial em extrema exigência mecânica e térmica.",
         "chart_monitor": "MONITORAMENTO EM TEMPO REAL",
         "chart_stability": "Estabilidade do Extrusor",
         "chart_stable": "Estável",
         "items": [
             {
-                "title": "Alta Temperatura",
-                "desc": "Temperatura de fabricação de até 350 graus."
+                "title": "Reposição Funcional",
+                "desc": "Reposição de peças quebradas."
             },
             {
-                "title": "Confiabilidade",
-                "desc": "Peças testadas a temperaturas de uso reais."
+                "title": "Disponibilidade",
+                "desc": "Peças descontinuadas."
             },
             {
-                "title": "Bico Endurecido",
-                "desc": "Imprime Fibra de Carbono por milhares de horas."
+                "title": "Prototipagem Ágil",
+                "desc": "Protótipos funcionais."
+            },
+            {
+                "title": "Evolução Contínua",
+                "desc": "Adaptações e melhorias."
+            },
+            {
+                "title": "Customização",
+                "desc": "Ferramentas e suportes personalizados."
             }
         ]
     },
     "cta": {
         "title": "Seu projeto merece",
         "title_highlight": "materialização profissional.",
-        "desc": "Envie seu projeto 3D ou STEP agora. Nossa engenharia analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
+        "desc": "Nossa equipe analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
         "btn_quote": "Solicitar Cotação",
         "btn_wpp": "WhatsApp",
-        "guarantee": "Resposta garantida em até 24h úteis.",
+        "guarantee": "Resposta garantida em até 24h.",
         "map_title": "Localização em Fortaleza"
     },
     "footer": {
         "desc": "Manufatura aditiva de alta performance com polo principal em Fortaleza, CE.",
         "services": {
             "title": "Serviços",
-            "items": ["Impressão 3D", "Multi-Material", "Escaneamento 3D", "Pós-Processamento"]
+            "items": [
+                "Impressão 3D",
+                "Multi-Material",
+                "Escaneamento 3D"
+            ]
         },
         "materials": {
             "title": "Materiais",
-            "items": ["PEEK", "Nylon CF", "PETG", "TPU Industrial"]
+            "items": [
+                "PEEK",
+                "Nylon CF",
+                "PETG",
+                "TPU Industrial"
+            ]
         },
         "contact": {
             "title": "Contato",

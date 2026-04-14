@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, TrendingDown, FileCheck, ShieldCheck, Printer, Layers, Scan, PenTool, Truck, Anchor } from 'lucide-react';
+import { Clock, TrendingDown, FileCheck, ShieldCheck, Truck, Anchor, Activity, UserCheck, Microscope } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const WhyChooseUs: React.FC = () => {
@@ -33,22 +33,22 @@ const WhyChooseUs: React.FC = () => {
         {
             title: t('why.services.0.title'),
             desc: t('why.services.0.desc'),
-            icon: Printer
+            icon: Activity // Ensaios
         },
         {
             title: t('why.services.1.title'),
             desc: t('why.services.1.desc'),
-            icon: Layers
+            icon: UserCheck // Atendimento
         },
         {
             title: t('why.services.2.title'),
             desc: t('why.services.2.desc'),
-            icon: Scan
+            icon: TrendingDown // Redução de Custos
         },
         {
             title: t('why.services.3.title'),
             desc: t('why.services.3.desc'),
-            icon: PenTool
+            icon: Microscope // Matéria adequada
         }
     ];
 
@@ -56,19 +56,7 @@ const WhyChooseUs: React.FC = () => {
         <section id="servicos" className="py-24 bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                {/* Cabeçalho Direto e Prático */}
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
-                    >
-                        {t('why.title')} <span className="text-brand-600">{t('why.title_highlight')}</span>
-                    </motion.h2>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                        {t('why.subtitle')}
-                    </p>
-                </div>
+                {/* Cabeçalho da seção intermediária removido conforme solicitado */}
 
                 {/* Vantagens Competitivas */}
                 <div className="mb-20">
@@ -123,20 +111,20 @@ const WhyChooseUs: React.FC = () => {
 
                 {/* Banner de Logística (O Atendimento Portuário e Nacional) */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    className="bg-brand-600 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between shadow-xl shadow-brand-600/20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="bg-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
                 >
-                    <div className="flex-1 mb-6 md:mb-0 md:mr-8">
-                        <h3 className="text-2xl font-bold text-white mb-2">{t('why.logistics.title')}</h3>
-                        <p className="text-brand-100 text-lg" dangerouslySetInnerHTML={{ __html: t('why.logistics.desc') }} />
+                    <div className="flex-1 mb-6 md:mb-0 md:mr-8 border-l-4 border-brand-500 pl-6">
+                        <h3 className="text-2xl font-bold text-brand-600 mb-2">{t('why.logistics.title')}</h3>
+                        <p className="text-slate-600 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t('why.logistics.desc') }} />
                     </div>
                     <div className="flex gap-4">
-                        <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                            <Truck className="text-white w-8 h-8" />
+                        <div className="w-16 h-16 rounded-2xl bg-brand-50 flex items-center justify-center border border-brand-100">
+                            <Truck className="text-brand-600 w-8 h-8" />
                         </div>
-                        <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                            <Anchor className="text-white w-8 h-8" />
+                        <div className="w-16 h-16 rounded-2xl bg-brand-50 flex items-center justify-center border border-brand-100">
+                            <Anchor className="text-brand-600 w-8 h-8" />
                         </div>
                     </div>
                 </motion.div>

@@ -7,10 +7,10 @@
         "brand": "Aditive Maintenance"
     },
     "hero": {
-        "badge": "Aditive Maintenance",
-        "title_main": "Engineering",
-        "title_gradient": "Materialized.",
-        "description": "Reduce physical inventory. Work with fast delivery or create your own digital parts stock. Certified parts delivery with fast port service.",
+        "badge": "Blue Printing 3D",
+        "title_main": "Parts",
+        "title_gradient": "on demand.",
+        "description": "Manufacturing for maintenance, replacement and development of technical parts. Custom production, even for hard-to-find items.",
         "cta_primary": "Start Project",
         "cta_secondary": "View Materials",
         "stat_quote": "Quote",
@@ -29,20 +29,12 @@
         "recommended": "Recommended",
         "general": {
             "title": "General Purpose Materials",
-            "desc": "Versatile materials for prototyping and standard mechanical applications.",
+            "desc": "Ideal for non-critical uses without mechanical requirements.",
             "items": [
                 {
                     "name": "PETG (Polyethylene Terephthalate Glycol)",
                     "desc": "Versatile material with an excellent balance between strength, flexibility, and printability.",
-                    "properties": [
-                        "Mechanical resistance: ⭐⭐⭐ (medium)",
-                        "Working temperature: ~80°C",
-                        "Moderate flexibility (good impact resistance)",
-                        "Good moisture and weather resistance",
-                        "Chemical resistance: ⭐⭐⭐",
-                        "Good transparency (in some variations)",
-                        "Good dimensional stability"
-                    ],
+                    "properties": [],
                     "applications": [
                         "Enclosures and shields (electrical/electronic)",
                         "General-purpose supports and parts",
@@ -132,40 +124,40 @@
         "subtitle": "Definitive solutions for your industry with cutting-edge technology.",
         "advantages": [
             {
-                "title": "Leadtime Reduction",
-                "desc": "Agility in delivery to keep your operation running."
+                "title": "Produção rápida",
+                "desc": "Dias, não semanas."
             },
             {
-                "title": "Cost Reduction",
-                "desc": "Significant savings on parts import."
+                "title": "Sem necessidade de molde",
+                "desc": "Sem custos de ferramentais."
             },
             {
-                "title": "Reliable Projects",
-                "desc": "Fast and reliable engineering files (3D Project)."
+                "title": "Alta Disponibilidade",
+                "desc": "Ideal para peças descontinuadas ou urgentes."
             },
             {
-                "title": "Reverse Engineering",
-                "desc": "Plastic replacement parts from broken parts."
+                "title": "Customização",
+                "desc": "Atendimento técnico personalizado."
             }
         ],
         "adv_title": "Why choose us",
         "serv_title": "Our Services",
         "services": [
             {
-                "title": "Industrial Rental",
-                "desc": "Rental of industrial 3D printers for your plant."
+                "title": "Mechanical Testing",
+                "desc": "On-demand mechanical testing options."
             },
             {
-                "title": "Medium Scale Printing",
-                "desc": "Serial production without high mold costs."
+                "title": "Personalized Technical Support",
+                "desc": "Developed by professionals with real field operation and maintenance experience."
             },
             {
-                "title": "Digitization",
-                "desc": "Digitization and design of engineering parts."
+                "title": "Cost Reduction",
+                "desc": "Up to 60% cheaper than imports."
             },
             {
-                "title": "Prototyping",
-                "desc": "Functional prototyping with brand engraving."
+                "title": "Suitable material with compatible mechanical characteristics",
+                "desc": "Thermal, pressure, and chemical compatibility."
             }
         ],
         "logistics": {
@@ -178,7 +170,7 @@
         "title": "Manufacturing",
         "title_highlight": "Process",
         "case": {
-            "badge": "Success Case",
+            "badge": "Exemplo de serviço concluído com sucesso",
             "title": "Specialty Valve - Chemical Industry",
             "desc": "A critical part failed on the production line, halting operations. Through reverse engineering and high-performance 3D printing, we delivered the solution in record time.",
             "prob_label": "Problem",
@@ -190,68 +182,85 @@
         },
         "steps": [
             {
-                "title": "Smart Upload",
-                "desc": "Send your 3D/STEP project for immediate analysis",
-                "tooltip": "Automatic 3D mesh and geometry analysis"
+                "title": "Technical Assessment",
+                "desc": "Technical feasibility assessment — Up to 48h.",
+                "tooltip": "Agile analysis"
             },
             {
-                "title": "Technical Validation",
-                "desc": "Engineers verify tolerances and materials",
-                "tooltip": "Tolerance verification and material recommendation"
+                "title": "Model Submission",
+                "desc": "Sending the scanned model or physical part.",
+                "tooltip": "Digitization"
             },
             {
-                "title": "Industrial Manufacturing",
-                "desc": "Printing in heated chamber with quality control",
-                "tooltip": "High-performance 3D printing"
+                "title": "Production",
+                "desc": "Up to 3 days after completing step 2.",
+                "tooltip": "Precision manufacturing"
             },
             {
-                "title": "Certified Delivery",
-                "desc": "Post-processing and shipping with dimensional report",
-                "tooltip": "Dimensional report and quality engineering"
+                "title": "Logistics",
+                "desc": "National and international shipping.",
+                "tooltip": "Logistics"
             }
         ]
     },
     "tech": {
-        "badge": "Tech Specs",
-        "title": "Thermal Control",
-        "title_highlight": "Absolute.",
-        "desc": "Guarantee of superior mechanical properties through rigorous temperature control.",
+        "badge": "Múltiplas Aplicações",
+        "title": "Aplicações",
+        "title_highlight": "",
+        "desc": "Ideal para uso industrial em extrema exigência mecânica e térmica.",
         "chart_monitor": "REAL-TIME MONITORING",
         "chart_stability": "Extruder Stability",
         "chart_stable": "Stable",
         "items": [
             {
-                "title": "High Temperature",
-                "desc": "Manufacturing temperature up to 350 degrees."
+                "title": "Reposição Funcional",
+                "desc": "Reposição de peças quebradas."
             },
             {
-                "title": "Reliability",
-                "desc": "Parts tested at real usage temperatures."
+                "title": "Disponibilidade",
+                "desc": "Peças descontinuadas."
             },
             {
-                "title": "Hardened Nozzle",
-                "desc": "Prints Carbon Fiber for thousands of hours."
+                "title": "Prototipagem Ágil",
+                "desc": "Protótipos funcionais."
+            },
+            {
+                "title": "Evolução Contínua",
+                "desc": "Adaptações e melhorias."
+            },
+            {
+                "title": "Customização",
+                "desc": "Ferramentas e suportes personalizados."
             }
         ]
     },
     "cta": {
         "title": "Your project deserves",
         "title_highlight": "professional materialization.",
-        "desc": "Send your 3D or STEP project now. Our engineering team analyzes feasibility and returns with a quote and ideal material suggestion.",
+        "desc": "Nossa equipe analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
         "btn_quote": "Request a Quote",
         "btn_wpp": "WhatsApp",
-        "guarantee": "Guaranteed response within 24 business hours.",
+        "guarantee": "Resposta garantida em até 24h.",
         "map_title": "Location in Fortaleza"
     },
     "footer": {
         "desc": "High-performance additive manufacturing with main hub in Fortaleza, CE.",
         "services": {
             "title": "Services",
-            "items": ["3D Printing", "Multi-Material", "3D Scanning", "Post-Processing"]
+            "items": [
+                "3D Printing",
+                "Multi-Material",
+                "3D Scanning"
+            ]
         },
         "materials": {
             "title": "Materials",
-            "items": ["PEEK", "Nylon CF", "PETG", "Industrial TPU"]
+            "items": [
+                "PEEK",
+                "Nylon CF",
+                "PETG",
+                "Industrial TPU"
+            ]
         },
         "contact": {
             "title": "Contact",

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import LogoMarquee from './components/LogoMarquee'; // <--- NOVO
+import LogoMarquee from './components/LogoMarquee';
 import WhyChooseUs from './components/WhyChooseUs';
 import MaterialsSection from './components/MaterialsSection';
 import ProcessTimeline from './components/ProcessTimeline'; // <--- NOVO
@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <LogoMarquee /> {/* <--- Adiciona movimento e preenche o espaço pós-hero */}
+        <LogoMarquee /> { /* Diferenciais em movimento */ }
         <WhyChooseUs />
         <ProcessTimeline /> {/* <--- Quebra o ritmo com interação 3D e fundo escuro */}
         <MaterialsSection />

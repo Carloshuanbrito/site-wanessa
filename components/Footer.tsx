@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-          <p>&copy; {new Date().getFullYear()} Aditive Maintenance. {t('footer.copyright')}</p>
+          <p>&copy; {new Date().getFullYear()} Blue Printing 3D. {t('footer.copyright')}</p>
           <div className="mt-2 md:mt-0 flex items-center">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             {t('footer.status')}

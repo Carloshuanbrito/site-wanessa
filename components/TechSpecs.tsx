@@ -1,71 +1,66 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Thermometer, Wind, Zap, Cpu, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Settings, Wrench, Shuffle, PackageCheck, Lightbulb, Box } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import bgTexture from './fotos/fundo/pexels-acev-19931186.jpg';
-
-const data = [
-  { time: '0s', temp: 25 }, { time: '5m', temp: 150 },
-  { time: '10m', temp: 300 }, { time: '15m', temp: 348 },
-  { time: '20m', temp: 350 }, { time: '25m', temp: 350 },
-  { time: '30m', temp: 349 }, { time: '35m', temp: 350 },
-];
-
-const AnimatedNumber = ({ value }: { value: number }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      const duration = 2000;
-      const steps = 60;
-      const stepValue = value / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += stepValue;
-        if (current >= value) {
-          setCount(value);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current));
-        }
-      }, duration / steps);
-      return () => clearInterval(timer);
-    }
-  }, [isInView, value]);
-
-  return <span ref={ref}>{count}</span>;
-};
+import printerOpImg from './fotos/3d_printer_operation.png';
 
 const TechSpecs: React.FC = () => {
   const { t } = useTranslation();
 
+  const items = [
+    { idx: 0, icon: Wrench, color: "text-blue-400", bg: "bg-blue-500/10" },
+    { idx: 1, icon: PackageCheck, color: "text-emerald-400", bg: "bg-emerald-500/10" },
+    { idx: 2, icon: Box, color: "text-purple-400", bg: "bg-purple-500/10" },
+    { idx: 3, icon: Lightbulb, color: "text-yellow-400", bg: "bg-yellow-500/10" },
+    { idx: 4, icon: Settings, color: "text-orange-400", bg: "bg-orange-500/10" }
+  ];
+
   return (
-    <section id="tecnologia" className="relative py-24 bg-slate-900 text-white overflow-hidden">
+    <section id="aplicacoes" className="relative py-24 bg-slate-900 text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-slate-900"></div>
-        <img src={bgTexture} alt="Tech Texture" className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900"></div>
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-600/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/4"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1 relative h-[600px] rounded-[2rem] overflow-hidden shadow-2xl border border-slate-700/50 group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent z-10"></div>
+            <img 
+               src={printerOpImg} 
+               alt="Impressora 3D em Operação" 
+               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out" 
+            />
+            <div className="absolute bottom-8 left-8 right-8 z-20">
+               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-slate-700 backdrop-blur-md mb-3">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">Produção Ativa</span>
+               </div>
+               <h3 className="text-2xl font-bold text-white">Manufatura de Alto Desempenho</h3>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="order-1 lg:order-2"
           >
             <div className="flex items-center gap-2 mb-6">
-              <Cpu className="text-brand-400" size={20} />
+              <Shuffle className="text-brand-400" size={20} />
               <span className="text-brand-400 font-mono text-sm uppercase tracking-widest">{t('tech.badge')}</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {t('tech.title')} <br />
-              <span className="text-blue-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">
                 {t('tech.title_highlight')}
               </span>
             </h2>
@@ -73,75 +68,20 @@ const TechSpecs: React.FC = () => {
               {t('tech.desc')}
             </p>
 
-            <div className="grid gap-6">
-              {[
-                {
-                  icon: Thermometer, color: "text-red-400", bg: "bg-red-500/10",
-                  title: t('tech.items.0.title'), value: "350°C",
-                  desc: t('tech.items.0.desc')
-                },
-                {
-                  icon: CheckCircle2, color: "text-green-400", bg: "bg-green-500/10",
-                  title: t('tech.items.1.title'), value: "TESTADO",
-                  desc: t('tech.items.1.desc')
-                },
-                {
-                  icon: Zap, color: "text-yellow-400", bg: "bg-yellow-500/10",
-                  title: t('tech.items.2.title'), value: "CF READY",
-                  desc: t('tech.items.2.desc')
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors backdrop-blur-sm">
-                  <div className={`p-3 rounded-lg mr-5 ${item.bg}`}>
+            <div className="grid gap-4">
+              {items.map((item, idx) => (
+                <div key={idx} className="flex items-center p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-all hover:bg-white/10 backdrop-blur-sm group">
+                  <div className={`p-3 rounded-xl mr-5 transition-colors ${item.bg}`}>
                     <item.icon className={`w-6 h-6 ${item.color}`} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-lg flex items-center gap-2">
-                      {item.title} <span className={`text-xs px-2 py-0.5 rounded border border-white/20 ${item.color}`}>{item.value}</span>
+                    <h4 className="text-white font-bold text-lg group-hover:text-brand-300 transition-colors">
+                      {t(`tech.items.${item.idx}.title`)}
                     </h4>
-                    <p className="text-slate-400 text-sm">{item.desc}</p>
+                    <p className="text-slate-400 text-sm">{t(`tech.items.${item.idx}.desc`)}</p>
                   </div>
                 </div>
               ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="bg-slate-800/60 backdrop-blur-md rounded-2xl border border-slate-700 p-8 shadow-2xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              <div className="flex justify-between items-start mb-8 relative z-10">
-                <div>
-                  <p className="text-slate-400 text-xs font-mono mb-1">{t('tech.chart_monitor')}</p>
-                  <h3 className="text-xl font-semibold text-white">{t('tech.chart_stability')}</h3>
-                </div>
-                <div className="text-right">
-                  <div className="text-4xl font-bold text-brand-400 font-mono flex items-center justify-end">
-                    <AnimatedNumber value={350} />
-                    <span className="text-lg ml-1">°C</span>
-                  </div>
-                  <span className="text-xs text-green-400 flex items-center justify-end gap-1">
-                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                    {t('tech.chart_stable')}
-                  </span>
-                </div>
-              </div>
-              <div className="h-64 w-full relative z-10">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
-                    <XAxis dataKey="time" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} domain={[0, 400]} />
-                    <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#f8fafc' }} itemStyle={{ color: '#38bdf8' }} />
-                    <Line type="monotone" dataKey="temp" stroke="#38bdf8" strokeWidth={3} dot={false} activeDot={{ r: 6, fill: '#fff', stroke: '#38bdf8', strokeWidth: 2 }} />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
             </div>
           </motion.div>
         </div>

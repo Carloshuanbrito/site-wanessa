@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
-import heroImage from './fotos/pexels-thisisengineering-3861437.jpg';
+import heroImage from './fotos/hero_parts_bench.png';
 import { ArrowRight, Layers, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -32,22 +32,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          {/* Badge de Localização / Polo */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm"
-          >
-            <div className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-            </div>
-            <span className="text-cyan-700 font-bold text-xs uppercase tracking-widest flex items-center gap-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-              Polo Principal em Fortaleza
-            </span>
-          </motion.div>
+          {/* Badge Removed */}
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
             {t('hero.title_main')} <br />
@@ -60,6 +45,15 @@ const Hero: React.FC = () => {
             {t('hero.description')}
           </p>
 
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="bg-white/60 border border-slate-200 backdrop-blur-md rounded-2xl p-5 shadow-sm flex-1 transform transition hover:-translate-y-1 hover:shadow-md">
+              <p className="text-sm font-semibold text-slate-800 leading-relaxed">Produzimos peças técnicas sob demanda a partir de modelo 3D, desenho ou peça física.</p>
+            </div>
+            <div className="bg-white/60 border border-slate-200 backdrop-blur-md rounded-2xl p-5 shadow-sm flex-1 transform transition hover:-translate-y-1 hover:shadow-md">
+              <p className="text-sm font-semibold text-slate-800 leading-relaxed">Atendemos desde protótipos até reposição funcional para uso real.</p>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="primary" icon onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}>
               <span className="flex items-center gap-2">{t('hero.cta_primary')} <ArrowRight size={18} /></span>
@@ -67,17 +61,7 @@ const Hero: React.FC = () => {
             <Button variant="outline" onClick={() => document.getElementById('materiais')?.scrollIntoView({ behavior: 'smooth' })}>{t('hero.cta_secondary')}</Button>
           </div>
 
-          {/* Dados Rápidos (Specs) */}
-          <div className="mt-12 grid grid-cols-3 gap-6 border-t border-slate-200 pt-8">
-            <div>
-              <p className="text-3xl font-bold text-slate-900">24h</p>
-              <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_quote')}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-slate-900">350°C</p>
-              <p className="text-xs text-slate-500 uppercase font-semibold">{t('hero.stat_temp')}</p>
-            </div>
-          </div>
+          {/* Removed Dados Rápidos */}
         </motion.div>
 
         {/* Lado Direito */}
