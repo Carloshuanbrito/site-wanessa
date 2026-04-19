@@ -13,12 +13,16 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = "inline-flex items-center justify-center px-8 py-4 text-sm font-semibold transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2";
+  const baseStyles =
+    'inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold tracking-[0.01em] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-60';
 
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/20 focus:ring-blue-500",
-    secondary: "bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-slate-900/20 focus:ring-slate-900",
-    outline: "border-2 border-slate-200 text-slate-700 hover:border-blue-600 hover:text-blue-600 bg-transparent focus:ring-blue-500"
+    primary:
+      'bg-slate-900 text-white shadow-[0_18px_34px_rgba(15,23,42,0.18)] hover:-translate-y-0.5 hover:bg-slate-800 focus:ring-slate-900',
+    secondary:
+      'bg-slate-800 text-white shadow-[0_16px_32px_rgba(15,23,42,0.16)] hover:-translate-y-0.5 hover:bg-slate-700 focus:ring-slate-800',
+    outline:
+      'border border-slate-300 bg-white text-slate-900 shadow-[0_10px_22px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 focus:ring-slate-400',
   };
 
   return (
@@ -26,8 +30,8 @@ const Button: React.FC<ButtonProps> = ({
       className={`${baseStyles} ${variants[variant]} ${className}`}
       {...props}
     >
-      {children}
-      {icon && <ArrowRight className="ml-2 h-4 w-4" />}
+      <span className="relative z-10">{children}</span>
+      {icon && <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />}
     </button>
   );
 };

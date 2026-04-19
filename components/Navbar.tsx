@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Box, Printer } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Box, Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Button from './Button';
 
-// --- COMPONENTES DAS BANDEIRAS (SVG Puro) ---
 const FlagBR = () => (
-  <svg className="w-5 h-5 rounded-full object-cover border border-slate-200 shadow-sm" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
+  <svg className="h-5 w-5 rounded-full border border-slate-200 object-cover shadow-sm" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
     <rect width="32" height="24" fill="#009c3b" />
     <path d="M16 2.5L29 12L16 21.5L3 12L16 2.5Z" fill="#ffdf00" />
     <circle cx="16" cy="12" r="5" fill="#002776" />
@@ -15,11 +14,11 @@ const FlagBR = () => (
 );
 
 const FlagUS = () => (
-  <svg className="w-5 h-5 rounded-full object-cover border border-slate-200 shadow-sm" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
+  <svg className="h-5 w-5 rounded-full border border-slate-200 object-cover shadow-sm" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
     <rect width="32" height="24" fill="#b22234" />
     <path d="M0 3.7H32M0 7.4H32M0 11.1H32M0 14.8H32M0 18.5H32M0 22.2H32" stroke="white" strokeWidth="1.85" />
     <rect width="14" height="13" fill="#3c3b6e" />
-    <path d="M2 2L3 4H1L2 2Z" fill="white" transform="scale(0.8) translate(1,1)" /> {/* Estrela simplificada */}
+    <path d="M2 2L3 4H1L2 2Z" fill="white" transform="scale(0.8) translate(1,1)" />
     <path d="M2 2L3 4H1L2 2Z" fill="white" transform="scale(0.8) translate(6,1)" />
     <path d="M2 2L3 4H1L2 2Z" fill="white" transform="scale(0.8) translate(11,1)" />
     <path d="M2 2L3 4H1L2 2Z" fill="white" transform="scale(0.8) translate(3.5,5)" />
@@ -33,29 +32,11 @@ const FlagUS = () => (
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const { t, i18n } = useTranslation();
 
-  // Função para trocar o idioma
-  const toggleLanguage = () => {
-    const newLang = i18n.language?.startsWith('pt') ? 'en' : 'pt';
-    i18n.changeLanguage(newLang);
-    
-    // SEO Update Instantâneo
-    document.documentElement.lang = newLang;
-    if (newLang === 'en') {
-      document.title = "Blue Printing 3D | High Performance Additive Manufacturing";
-      document.querySelector('meta[name="description"]')?.setAttribute("content", "Reduce your physical inventory and work with fast delivery. Definitive and standardized solutions in 3D printing and engineering.");
-    } else {
-      document.title = "Blue Printing 3D | Manufatura Aditiva de Alta Performance";
-      document.querySelector('meta[name="description"]')?.setAttribute("content", "Reduza os seus estoques físicos e trabalhe com entrega rápida. Soluções definitivas e padronizadas em impressão 3D e engenharia para a indústria.");
-    }
-  };
-
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -66,116 +47,139 @@ const Navbar: React.FC = () => {
     { name: t('navbar.services'), href: '#servicos' },
   ];
 
-  // Helper para decidir qual bandeira mostrar
   const isPt = i18n.language?.startsWith('pt');
 
+  const setLanguage = (lang: 'pt' | 'en') => {
+    i18n.changeLanguage(lang);
+    document.documentElement.lang = lang;
+    if (lang === 'en') {
+      document.title = 'Blue Printing 3D | High Performance Additive Manufacturing';
+      document.querySelector('meta[name="description"]')?.setAttribute(
+        'content',
+        'Reduce your physical inventory and work with fast delivery. Definitive and standardized solutions in 3D printing and engineering.'
+      );
+    } else {
+      document.title = 'Blue Printing 3D | Manufatura Aditiva de Alta Performance';
+      document.querySelector('meta[name="description"]')?.setAttribute(
+        'content',
+        'Reduza os seus estoques físicos e trabalhe com entrega rápida. Soluções definitivas e padronizadas em impressão 3D e engenharia para a indústria.'
+      );
+    }
+  };
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
-        ? 'bg-white/70 backdrop-blur-md shadow-md py-3'
-        : 'bg-transparent py-6'
+    <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+      <div
+        className={`mx-auto max-w-7xl rounded-[1.75rem] border transition-all duration-300 ${
+          isScrolled
+            ? 'border-white/70 bg-white/88 shadow-[0_18px_54px_rgba(15,23,42,0.10)] backdrop-blur-xl'
+            : 'border-white/60 bg-white/76 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur-lg'
         }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+      >
+        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+          <a href="#" className="flex items-center gap-3">
+            <div className="icon-shell flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_12px_28px_rgba(15,23,42,0.16)]">
+              <Box className="h-5 w-5" strokeWidth={2.4} />
+            </div>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-slate-500">Blue Printing 3D</p>
+              <span className="block text-sm font-bold text-slate-900 sm:text-base">{t('navbar.brand')}</span>
+            </div>
+          </a>
 
+          <div className="hidden items-center gap-3 lg:flex">
+            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-[0_10px_20px_rgba(15,23,42,0.05)]">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition-all hover:bg-slate-100 hover:text-slate-900"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
 
-          <div className="flex items-center gap-3">
-            <Box className="h-8 w-8 text-brand-600" strokeWidth={2.5} />
-            <span className="text-xl font-bold text-slate-900 tracking-tight">{t('hero.badge')}</span>
-          </div>
-
-          {/* Menu Desktop */}
-          <div className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-all hover:text-brand-500 hover:-translate-y-0.5 ${isScrolled ? 'text-slate-600' : 'text-slate-700'
-                  }`}
-              >
-                {link.name}
-              </a>
-            ))}
-
-            <div className={`h-6 w-px ${isScrolled ? 'bg-slate-300' : 'bg-slate-300/50'}`}></div>
-
-            {/* BOTÃO DE IDIOMA COM BANDEIRA E FEEDBACK VISUAL */}
-            <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-slate-200/50 rounded-full p-1 shadow-inner">
+            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-[0_10px_20px_rgba(15,23,42,0.05)]">
               <button
-                onClick={() => i18n.changeLanguage('pt')}
+                onClick={() => setLanguage('pt')}
                 title="Português"
-                className={`flex items-center justify-center p-1 rounded-full transition-all duration-300 ${isPt ? 'bg-white shadow-sm ring-1 ring-slate-200 scale-110' : 'opacity-50 hover:opacity-100 hover:scale-105'}`}
+                className={`rounded-full p-1.5 transition-all ${isPt ? 'bg-slate-50 shadow-sm ring-1 ring-slate-200' : 'opacity-60 hover:opacity-100'}`}
               >
                 <FlagBR />
               </button>
               <button
-                onClick={() => i18n.changeLanguage('en')}
+                onClick={() => setLanguage('en')}
                 title="English"
-                className={`flex items-center justify-center p-1 rounded-full transition-all duration-300 ${!isPt ? 'bg-white shadow-sm ring-1 ring-slate-200 scale-110' : 'opacity-50 hover:opacity-100 hover:scale-105'}`}
+                className={`rounded-full p-1.5 transition-all ${!isPt ? 'bg-slate-50 shadow-sm ring-1 ring-slate-200' : 'opacity-60 hover:opacity-100'}`}
               >
                 <FlagUS />
               </button>
             </div>
 
-            <Button onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })} variant={isScrolled ? 'primary' : 'outline'} className="shadow-lg shadow-brand-500/20">
+            <Button
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+              variant="primary"
+              className="group"
+            >
               {t('navbar.cta')}
             </Button>
           </div>
 
-          {/* Menu Mobile */}
-          <div className="md:hidden flex items-center gap-3">
-            {/* Botão Idioma Mobile */}
-            <div className="flex bg-white/50 border border-slate-200 backdrop-blur-sm shadow-sm rounded-full p-0.5">
-               <button onClick={() => i18n.changeLanguage('pt')} className={`p-1.5 rounded-full transition-all ${isPt ? 'bg-white shadow-sm' : 'opacity-40'}`}>
-                 <FlagBR />
-               </button>
-               <button onClick={() => i18n.changeLanguage('en')} className={`p-1.5 rounded-full transition-all ${!isPt ? 'bg-white shadow-sm' : 'opacity-40'}`}>
-                 <FlagUS />
-               </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-[0_10px_20px_rgba(15,23,42,0.05)]">
+              <button onClick={() => setLanguage('pt')} className={`rounded-full p-1 ${isPt ? 'bg-slate-50 shadow-sm' : 'opacity-50'}`}>
+                <FlagBR />
+              </button>
+              <button onClick={() => setLanguage('en')} className={`rounded-full p-1 ${!isPt ? 'bg-slate-50 shadow-sm' : 'opacity-50'}`}>
+                <FlagUS />
+              </button>
             </div>
 
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-md transition-colors ${isScrolled ? 'text-slate-900 hover:bg-slate-100' : 'text-slate-800 bg-white/50 hover:bg-white'
-                }`}
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              className="rounded-2xl border border-slate-200 bg-white p-3 text-slate-900 shadow-[0_10px_20px_rgba(15,23,42,0.05)] transition-colors hover:bg-slate-50"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Dropdown Mobile */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-100 overflow-hidden shadow-xl"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-base font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden border-t border-slate-200 bg-white lg:hidden"
+            >
+              <div className="space-y-2 px-4 py-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-100"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <Button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  variant="primary"
+                  className="mt-2 w-full justify-center"
                 >
-                  {link.name}
-                </a>
-              ))}
-              <div className="pt-4 px-2">
-                <Button onClick={() => { setIsMobileMenuOpen(false); document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' }); }} variant="primary" className="w-full justify-center text-lg py-3">
                   {t('navbar.cta')}
                 </Button>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 };

@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import LogoMarquee from './components/LogoMarquee';
 import WhyChooseUs from './components/WhyChooseUs';
 import MaterialsSection from './components/MaterialsSection';
-import ProcessTimeline from './components/ProcessTimeline'; // <--- NOVO
+import ProcessTimeline from './components/ProcessTimeline';
 import TechSpecs from './components/TechSpecs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -15,14 +15,15 @@ import './index.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-brand-500 selection:text-white">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-brand-500 selection:text-white">
       <ReadingProgress />
       <Navbar />
-      <main>
+      <main className="relative">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[38rem] bg-gradient-to-b from-white/70 to-transparent" />
         <Hero />
-        <LogoMarquee /> { /* Diferenciais em movimento */ }
+        <LogoMarquee />
         <WhyChooseUs />
-        <ProcessTimeline /> {/* <--- Quebra o ritmo com interação 3D e fundo escuro */}
+        <ProcessTimeline />
         <MaterialsSection />
         <TechSpecs />
         <CTA />
