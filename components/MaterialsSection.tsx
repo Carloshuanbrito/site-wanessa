@@ -1,79 +1,107 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ExternalLink, XCircle } from 'lucide-react';
-import printerOpImg from './fotos/3d_printer_operation.png';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, CheckCircle2, ExternalLink, XCircle, Info } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import nozzleImg from './fotos/nozzle_precision.png';
+import petgImg from './fotos/petg.png';
+import nylonCfImg from './fotos/nylon_cf.png';
+import peekImg from './fotos/peek.png';
 
 const MaterialsSection: React.FC = () => {
+  const { t } = useTranslation();
   const propertiesLink = '#contato';
+
+  const { scrollYProgress } = useScroll();
+  const yBg = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const opacityBg = useTransform(scrollYProgress, [0.3, 0.6], [0.02, 0.05]);
   const comparisonRows = [
-    { label: 'Resistência mecânica', proto: 'Média', eng: 'Muito alta a extrema' },
-    { label: 'Resistência térmica', proto: 'Até 80°C', eng: '120°C a 250°C' },
-    { label: 'Resistência química', proto: 'Moderada', eng: 'Alta a extrema' },
-    { label: 'Reforço com fibras (CF/GF)', proto: false, eng: true },
-    { label: 'Substituição de metais', proto: false, eng: true },
+    { label: t('materials.comparison.labels.0'), proto: t('materials.comparison.values.low'), eng: t('materials.comparison.values.high') },
+    { label: t('materials.comparison.labels.1'), proto: t('materials.comparison.values.t_low'), eng: t('materials.comparison.values.t_high') },
+    { label: t('materials.comparison.labels.2'), proto: t('materials.comparison.values.q_low'), eng: t('materials.comparison.values.q_high') },
+    { label: t('materials.comparison.labels.3'), proto: false, eng: true },
+    { label: t('materials.comparison.labels.4'), proto: false, eng: true },
   ];
 
   return (
-    <section id="materiais" className="section-tint-materials relative overflow-hidden py-24">
+    <section id="materiais" className="section-tint-materials relative overflow-hidden py-32">
+      {/* Background Parallax */}
+      <motion.div 
+        style={{ y: yBg, opacity: opacityBg }}
+        className="pointer-events-none absolute -left-10 top-20 select-none text-[12rem] font-black leading-none text-white"
+      >
+        SPEC
+      </motion.div>
+      <motion.div 
+        style={{ y: yBg, opacity: 0.01 }}
+        className="pointer-events-none absolute -right-10 bottom-20 select-none text-[10rem] font-black leading-none text-[#00F0FF]"
+      >
+        MATERIALS
+      </motion.div>
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="mb-6 text-4xl font-bold text-slate-900 md:text-5xl">
-            Catálogo de <span className="text-brand-700">Materiais Avançados.</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14 text-center"
+        >
+          <h2 className="mb-6 text-4xl font-black tracking-tight text-white md:text-7xl">
+            {t('materials.header_title')} <span className="text-[#00F0FF]">{t('materials.header_highlight')}</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-600">
-            Compare os dois modelos e visualize a linha mais adequada para a sua aplicação.
+          <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-300">
+            {t('materials.header_desc')}
           </p>
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_22px_60px_rgba(15,23,42,0.08)]"
+          viewport={{ once: true, margin: "-100px" }}
+          className="overflow-hidden rounded-3xl border border-[#00F0FF]/15 bg-[#0A0A0A] shadow-[0_22px_60px_rgba(0,0,0,0.5)]"
         >
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-left">
               <thead>
                 <tr>
-                  <th className="w-1/3 border-b border-slate-200 bg-slate-50 p-6">
-                    <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Característica</span>
+                  <th className="w-1/3 border-b border-[#00F0FF]/10 bg-[#111] p-6">
+                    <span className="text-sm font-bold uppercase tracking-widest text-[#00F0FF]">{t('materials.comparison.label_char')}</span>
                   </th>
-                  <th className="relative w-1/3 border-b border-r border-slate-100 bg-slate-50 p-6">
+                  <th className="relative w-1/3 border-b border-r border-[#00F0FF]/10 bg-[#111] p-6">
                     <div className="flex flex-col">
-                      <span className="mb-1 text-2xl font-bold text-slate-900">Prototipagem Rápida</span>
-                      <span className="text-sm font-semibold text-slate-500">PETG</span>
-                      <p className="mt-3 inline-block rounded-md bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700">
-                        Ideal para usos não críticos sem exigências mecânicas.
+                      <span className="mb-1 text-2xl font-bold text-white">{t('materials.comparison.title_proto')}</span>
+                      <span className="text-sm font-semibold text-[#00F0FF]">PETG</span>
+                      <p className="mt-3 inline-block rounded-md bg-[#1A1A1A] px-3 py-1.5 text-xs font-bold text-slate-300">
+                        {t('materials.general.desc')}
                       </p>
                     </div>
                   </th>
-                  <th className="relative w-1/3 border-b border-slate-200 bg-slate-50 p-6">
+                  <th className="relative w-1/3 border-b border-[#00F0FF]/10 border-l-2 border-l-[#00F0FF] bg-[#111] p-6">
                     <div className="flex flex-col">
-                      <span className="mb-1 text-2xl font-bold text-slate-900">Grau de Engenharia</span>
-                      <span className="text-sm font-semibold text-slate-500">Nylon CF, PEEK, TPU</span>
-                      <p className="mt-3 inline-block rounded-md bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700">
-                        Alta performance estrutural e térmica.
+                      <span className="mb-1 text-2xl font-bold text-white">{t('materials.comparison.title_eng')}</span>
+                      <span className="text-sm font-semibold text-[#00F0FF]">Nylon CF, PEEK, TPU</span>
+                      <p className="mt-3 inline-block rounded-md bg-[#1A1A1A] px-3 py-1.5 text-xs font-bold text-slate-300">
+                        {t('materials.engineering.desc')}
                       </p>
                     </div>
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-[#00F0FF]/10">
                 {comparisonRows.map((row, idx) => (
-                  <tr key={idx} className="transition-colors hover:bg-slate-50/60">
-                    <td className="p-6 font-semibold text-slate-800">{row.label}</td>
-                    <td className="border-r border-slate-100 p-6">
+                  <tr key={idx} className="transition-colors hover:bg-[#111]">
+                    <td className="p-6 font-semibold text-slate-200">{row.label}</td>
+                    <td className="border-r border-[#00F0FF]/10 p-6">
                       {typeof row.proto === 'boolean' ? (
-                        row.proto ? <CheckCircle2 className="text-slate-800" size={24} /> : <XCircle className="text-slate-300" size={24} />
+                        row.proto ? <CheckCircle2 className="text-[#00F0FF]" size={24} /> : <XCircle className="text-white/20" size={24} />
                       ) : (
-                        <span className="font-semibold text-slate-700">{row.proto}</span>
+                        <span className="font-semibold text-slate-300">{row.proto}</span>
                       )}
                     </td>
-                    <td className="p-6">
+                    <td className="p-6 border-l-2 border-l-[#00F0FF]">
                       {typeof row.eng === 'boolean' ? (
-                        row.eng ? <CheckCircle2 className="text-slate-800" size={24} /> : <XCircle className="text-slate-300" size={24} />
+                        row.eng ? <CheckCircle2 className="text-[#00F0FF]" size={24} /> : <XCircle className="text-white/20" size={24} />
                       ) : (
-                        <span className="font-bold text-slate-800">{row.eng}</span>
+                        <span className="font-bold text-slate-200">{row.eng}</span>
                       )}
                     </td>
                   </tr>
@@ -82,50 +110,113 @@ const MaterialsSection: React.FC = () => {
             </table>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 border-t border-slate-200 bg-slate-50 p-6 md:p-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <article className="rounded-2xl border border-slate-200 bg-white p-6">
-                <h3 className="mb-3 text-xl font-bold text-slate-900">PETG</h3>
-                <p className="text-sm leading-6 text-slate-600">
-                  Ideal para usos não críticos sem exigências mecânicas.
-                </p>
-              </article>
+          <div className="grid grid-cols-1 gap-6 border-t border-[#00F0FF]/10 bg-[#0A0A0A] p-6 md:p-8">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <motion.article 
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative overflow-hidden rounded-2xl border border-[#00F0FF]/10 bg-[#111] p-0 transition-all hover:border-[#00F0FF]/30"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img src={petgImg} alt="PETG Prototype" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent opacity-60" />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-bold text-white">{t('materials.items_desc.petg_title')}</h3>
+                  <p className="text-sm leading-6 text-slate-300">
+                    {t('materials.items_desc.petg_desc')}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00F0FF] opacity-0 transition-opacity group-hover:opacity-100">
+                    <Info size={14} /> {t('materials.items_desc.technical_details')}
+                  </div>
+                </div>
+              </motion.article>
 
-              <article className="rounded-2xl border border-slate-200 bg-white p-6">
-                <h3 className="mb-3 text-xl font-bold text-slate-900">Aplicação visual e validação</h3>
-                <p className="text-sm leading-6 text-slate-600">
-                  Bom custo-benefício para maquetes, validação de forma e peças de apresentação.
-                </p>
-              </article>
+              <motion.article 
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative overflow-hidden rounded-2xl border border-[#00F0FF]/10 bg-[#111] p-0 transition-all hover:border-[#00F0FF]/30"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img src={nylonCfImg} alt="Nylon CF Part" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent opacity-60" />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-bold text-white">{t('materials.items_desc.nylon_title')}</h3>
+                  <p className="text-sm leading-6 text-slate-300">
+                    {t('materials.items_desc.nylon_desc')}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00F0FF] opacity-0 transition-opacity group-hover:opacity-100">
+                    <Info size={14} /> {t('materials.items_desc.technical_details')}
+                  </div>
+                </div>
+              </motion.article>
+
+              <motion.article 
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative overflow-hidden rounded-2xl border border-[#00F0FF]/10 bg-[#111] p-0 transition-all hover:border-[#00F0FF]/30 sm:col-span-2 lg:col-span-1"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img src={peekImg} alt="PEEK Aerospace Part" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent opacity-60" />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-bold text-white">{t('materials.items_desc.peek_title')}</h3>
+                  <p className="text-sm leading-6 text-slate-300">
+                    {t('materials.items_desc.peek_desc')}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00F0FF] opacity-0 transition-opacity group-hover:opacity-100">
+                    <Info size={14} /> {t('materials.items_desc.technical_details')}
+                  </div>
+                </div>
+              </motion.article>
             </div>
 
-            <div className="relative min-h-[240px] overflow-hidden rounded-2xl">
-              <img
-                src={printerOpImg}
-                alt="Impressora 3D produzindo uma peça técnica"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-900/18 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-slate-200">
-                  Produção visual
+            <div className="mt-8 grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+              <div className="rounded-2xl border border-[#00F0FF]/10 bg-[#111] p-8">
+                <h3 className="mb-4 text-2xl font-bold text-white">{t('materials.intelligence.title')}</h3>
+                <p className="text-lg leading-8 text-slate-300">
+                  {t('materials.intelligence.desc')}
                 </p>
-                <p className="max-w-sm text-sm text-white">
-                  Comparação rápida para orientar a escolha inicial do material antes da definição técnica final.
-                </p>
+                <ul className="mt-6 space-y-4">
+                  {(t('materials.intelligence.items', { returnObjects: true }) as string[]).map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-slate-200">
+                      <div className="h-2 w-2 rounded-full bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
+
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="relative min-h-[320px] overflow-hidden rounded-2xl border border-[#00F0FF]/20"
+              >
+                <img
+                  src={nozzleImg}
+                  alt={t('materials.op_tech.badge')}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-8">
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#00F0FF]">
+                    {t('materials.op_tech.badge')}
+                  </p>
+                  <p className="text-lg font-bold text-white">
+                    {t('materials.op_tech.desc')}
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-6 border-t border-slate-200 bg-white p-6 px-8 md:flex-row">
-            <p className="text-sm text-slate-500">
-              * As propriedades exatas dependem do polímero específico escolhido.
+          <div className="flex flex-col items-center justify-between gap-6 border-t border-[#00F0FF]/10 bg-[#0A0A0A] p-6 px-8 md:flex-row">
+            <p className="text-sm text-slate-400">
+              {t('materials.footer_note')}
             </p>
             <a
               href={propertiesLink}
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl bg-slate-900 px-8 py-3 font-bold text-white transition-colors hover:bg-slate-800"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl bg-[#FF5C00] px-8 py-3 font-bold text-white transition-colors hover:bg-[#e05200] shadow-[0_8px_20px_rgba(255,92,0,0.2)]"
             >
-              Ver tabela de propriedades <ExternalLink size={18} /> <ArrowRight size={18} />
+              {t('materials.footer_btn')} <ExternalLink size={18} /> <ArrowRight size={18} />
             </a>
           </div>
         </motion.div>

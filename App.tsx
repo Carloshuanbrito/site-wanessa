@@ -11,21 +11,34 @@ import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import BackToTop from './components/BackToTop';
 import ReadingProgress from './components/ReadingProgress';
+import PerspectiveSection from './components/PerspectiveSection';
 import './index.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-brand-500 selection:text-white">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-[#00F0FF] selection:text-white">
       <ReadingProgress />
       <Navbar />
-      <main className="relative">
-        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[38rem] bg-gradient-to-b from-white/70 to-transparent" />
+      <main className="relative perspective-1000">
         <Hero />
         <LogoMarquee />
-        <WhyChooseUs />
-        <ProcessTimeline />
-        <MaterialsSection />
-        <TechSpecs />
+        
+        <PerspectiveSection>
+          <WhyChooseUs />
+        </PerspectiveSection>
+
+        <PerspectiveSection>
+          <ProcessTimeline />
+        </PerspectiveSection>
+
+        <PerspectiveSection>
+          <MaterialsSection />
+        </PerspectiveSection>
+
+        <PerspectiveSection>
+          <TechSpecs />
+        </PerspectiveSection>
+
         <CTA />
       </main>
       <Footer />

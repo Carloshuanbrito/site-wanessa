@@ -16,13 +16,13 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles =
     'inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold tracking-[0.01em] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-60';
 
-  const variants = {
+    const variants = {
     primary:
-      'bg-slate-900 text-white shadow-[0_18px_34px_rgba(15,23,42,0.18)] hover:-translate-y-0.5 hover:bg-slate-800 focus:ring-slate-900',
+      'bg-[#FF5C00] text-white shadow-[0_18px_34px_rgba(255,92,0,0.25)] hover:-translate-y-0.5 hover:bg-[#e05200] hover:shadow-[0_0_25px_rgba(255,92,0,0.5)] focus:ring-[#FF5C00] transition-all duration-300',
     secondary:
-      'bg-slate-800 text-white shadow-[0_16px_32px_rgba(15,23,42,0.16)] hover:-translate-y-0.5 hover:bg-slate-700 focus:ring-slate-800',
+      'bg-[#1A1A1A] text-white shadow-[0_16px_32px_rgba(0,0,0,0.3)] hover:-translate-y-0.5 hover:bg-[#222] focus:ring-[#1A1A1A]',
     outline:
-      'border border-slate-300 bg-white text-slate-900 shadow-[0_10px_22px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 focus:ring-slate-400',
+      'border border-[#00F0FF]/40 bg-transparent text-[#00F0FF] shadow-[0_10px_22px_rgba(0,240,255,0.05)] hover:-translate-y-0.5 hover:border-[#00F0FF]/60 hover:bg-[#00F0FF]/8 focus:ring-[#00F0FF]/50',
   };
 
   return (

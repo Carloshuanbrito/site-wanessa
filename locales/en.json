@@ -10,7 +10,7 @@
         "badge": "Blue Printing 3D",
         "title_main": "Parts",
         "title_gradient": "on demand.",
-        "description": "Manufacturing for maintenance, replacement and development of technical parts. Custom production, even for hard-to-find items.",
+        "description": "Reduce your physical stocks and work with fast delivery. Definitive and standardized solutions in 3D printing and engineering for industry.",
         "cta_primary": "Start Project",
         "cta_secondary": "View Materials",
         "stat_quote": "Quote",
@@ -19,7 +19,10 @@
         "float_card_label": "Material",
         "float_card_value": "Carbon Fiber",
         "img_label": "Active Production",
-        "img_desc": "Advanced Polymer Printing"
+        "img_desc": "Advanced Polymer Printing",
+        "feature_1": "We produce technical parts on demand from 3D models, drawings or physical parts.",
+        "feature_2": "We serve everything from prototypes to functional replacement for real use and operational continuity.",
+        "img_footer_desc": "Solutions for maintenance, replacement and development with high standard visual finish."
     },
     "materials": {
         "header_title": "Catalog of",
@@ -34,7 +37,14 @@
                 {
                     "name": "PETG (Polyethylene Terephthalate Glycol)",
                     "desc": "Versatile material with an excellent balance between strength, flexibility, and printability.",
-                    "properties": [],
+                    "properties": [
+                        "Mechanical resistance: ⭐⭐⭐ (medium)",
+                        "Working temperature: ~80°C",
+                        "Moderate flexibility (good impact resistance)",
+                        "Good moisture and weather resistance",
+                        "Chemical resistance: ⭐⭐⭐",
+                        "Good dimensional stability"
+                    ],
                     "applications": [
                         "Enclosures and shields (electrical/electronic)",
                         "General-purpose supports and parts",
@@ -116,32 +126,102 @@
                     ]
                 }
             ]
-        }
+        },
+        "comparison": {
+            "label_char": "Feature",
+            "title_proto": "Rapid Prototyping",
+            "title_eng": "Engineering Grade",
+            "labels": [
+                "Mechanical resistance",
+                "Thermal resistance",
+                "Chemical resistance",
+                "Fiber reinforcement (CF/GF)",
+                "Metal replacement"
+            ],
+            "values": {
+                "low": "Medium",
+                "high": "Very high to extreme",
+                "t_low": "Up to 80°C",
+                "t_high": "120°C to 250°C",
+                "q_low": "Moderate",
+                "q_high": "High to extreme"
+            }
+        },
+        "items_desc": {
+            "petg_title": "PETG",
+            "petg_desc": "Rapid prototyping with excellent visual finish and low cost.",
+            "nylon_title": "Nylon CF",
+            "nylon_desc": "Carbon fiber reinforced for maximum stiffness and mechanical strength.",
+            "peek_title": "PEEK / Ultem",
+            "peek_desc": "Ultra-high performance polymers for aerospace and chemical applications.",
+            "technical_details": "Technical details"
+        },
+        "intelligence": {
+            "title": "Choose Wisely",
+            "desc": "Our technical team helps you define the ideal material based on:",
+            "items": [
+                "Mechanical load and structural stress",
+                "Continuous operating temperature",
+                "Exposure to chemical agents or solvents",
+                "Need for certification (UL94-V0, FDA)"
+            ]
+        },
+        "op_tech": {
+            "badge": "Technical Operation",
+            "desc": "Constant monitoring to ensure dimensional accuracy."
+        },
+        "footer_btn": "View properties table",
+        "footer_note": "* Exact properties depend on the specific polymer chosen."
     },
     "why": {
+        "header_badge": "Industrial Excellence",
+        "header_title": "Your partner in",
+        "header_highlight": "Strategic Manufacturing.",
+        "header_desc": "We deliver more than parts: we deliver the security that your production line will not stop.",
         "title": "Advantages and",
         "title_highlight": "Services",
         "subtitle": "Definitive solutions for your industry with cutting-edge technology.",
         "advantages": [
             {
-                "title": "Produção rápida",
-                "desc": "Dias, não semanas."
+                "title": "Fast Production",
+                "desc": "Days, not weeks."
             },
             {
-                "title": "Sem necessidade de molde",
-                "desc": "Sem custos de ferramentais."
+                "title": "No Mold Needed",
+                "desc": "No tooling costs."
             },
             {
-                "title": "Alta Disponibilidade",
-                "desc": "Ideal para peças descontinuadas ou urgentes."
+                "title": "High Availability",
+                "desc": "Ideal for discontinued or urgent parts."
             },
             {
-                "title": "Customização",
-                "desc": "Atendimento técnico personalizado."
+                "title": "Customization",
+                "desc": "Personalized technical support."
+            },
+            {
+                "title": "Reverse Engineering",
+                "desc": "Digitization and reconstruction of parts."
+            },
+            {
+                "title": "Parts on Demand",
+                "desc": "Production as needed."
+            },
+            {
+                "title": "Industrial Printing",
+                "desc": "High precision FDM technology."
+            },
+            {
+                "title": "Advanced Materials",
+                "desc": "Carbon fiber, PEEK, and Nylon."
             }
         ],
         "adv_title": "Why choose us",
+        "adv_subtitle": "Value proposition presented with more contrast and hierarchy.",
         "serv_title": "Our Services",
+        "commercial_arg": "Each card now functions as a commercial argument: easy to scan, clearer and with consistent visual presence.",
+        "services_title": "Services organized as a premium portfolio",
+        "logistics_badge": "Logistics coverage",
+        "logistics_detail": "Service sensitive to port demands and critical operation.",
         "services": [
             {
                 "title": "Mechanical Testing",
@@ -170,7 +250,7 @@
         "title": "Manufacturing",
         "title_highlight": "Process",
         "case": {
-            "badge": "Exemplo de serviço concluído com sucesso",
+            "badge": "Case Study: Successful Project",
             "title": "Specialty Valve - Chemical Industry",
             "desc": "A critical part failed on the production line, halting operations. Through reverse engineering and high-performance 3D printing, we delivered the solution in record time.",
             "prob_label": "Problem",
@@ -204,43 +284,48 @@
         ]
     },
     "tech": {
-        "badge": "Múltiplas Aplicações",
-        "title": "Aplicações",
+        "badge": "Multiple Applications",
+        "title": "Applications",
         "title_highlight": "",
-        "desc": "Ideal para uso industrial em extrema exigência mecânica e térmica.",
+        "desc": "Solutions focused on replacement, operational continuity, and rapid development of parts on demand.",
+        "cta_eval": "Request project evaluation",
+        "real_apps": "Real applications",
+        "industrial_3d": "Industrial 3D printing",
+        "industrial_3d_desc": "Parts on demand for replacement, adaptation and functional prototyping.",
         "chart_monitor": "REAL-TIME MONITORING",
         "chart_stability": "Extruder Stability",
         "chart_stable": "Stable",
         "items": [
             {
-                "title": "Reposição Funcional",
-                "desc": "Reposição de peças quebradas."
+                "title": "Replacement of broken parts",
+                "desc": "Production of replacement components to reduce downtime and resume operations."
             },
             {
-                "title": "Disponibilidade",
-                "desc": "Peças descontinuadas."
+                "title": "Discontinued parts",
+                "desc": "Alternative for out-of-line items or items with low market availability."
             },
             {
-                "title": "Prototipagem Ágil",
-                "desc": "Protótipos funcionais."
+                "title": "Functional prototypes",
+                "desc": "Quick validation of geometries and performance before final production."
             },
             {
-                "title": "Evolução Contínua",
-                "desc": "Adaptações e melhorias."
+                "title": "Adaptations and improvements",
+                "desc": "Adjustments to existing parts for adaptation, reinforcement, or functional gain."
             },
             {
-                "title": "Customização",
-                "desc": "Ferramentas e suportes personalizados."
+                "title": "Custom tools and fixtures",
+                "desc": "Tailor-made solutions for internal use, assembly, support, and operation."
             }
         ]
     },
     "cta": {
         "title": "Your project deserves",
         "title_highlight": "professional materialization.",
-        "desc": "Nossa equipe analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
+        "desc": "Our team analyzes the feasibility and returns with the budget and suggested ideal material.",
         "btn_quote": "Request a Quote",
         "btn_wpp": "WhatsApp",
-        "guarantee": "Resposta garantida em até 24h.",
+        "fast_response": "Fast response",
+        "guarantee": "Guaranteed response within 24 hours.",
         "map_title": "Location in Fortaleza"
     },
     "footer": {

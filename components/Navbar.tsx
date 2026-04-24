@@ -53,13 +53,13 @@ const Navbar: React.FC = () => {
     i18n.changeLanguage(lang);
     document.documentElement.lang = lang;
     if (lang === 'en') {
-      document.title = 'Blue Printing 3D | High Performance Additive Manufacturing';
+      document.title = 'Blue Printing 3D';
       document.querySelector('meta[name="description"]')?.setAttribute(
         'content',
         'Reduce your physical inventory and work with fast delivery. Definitive and standardized solutions in 3D printing and engineering.'
       );
     } else {
-      document.title = 'Blue Printing 3D | Manufatura Aditiva de Alta Performance';
+      document.title = 'Blue Printing 3D';
       document.querySelector('meta[name="description"]')?.setAttribute(
         'content',
         'Reduza os seus estoques físicos e trabalhe com entrega rápida. Soluções definitivas e padronizadas em impressão 3D e engenharia para a indústria.'
@@ -72,46 +72,47 @@ const Navbar: React.FC = () => {
       <div
         className={`mx-auto max-w-7xl rounded-[1.75rem] border transition-all duration-300 ${
           isScrolled
-            ? 'border-white/70 bg-white/88 shadow-[0_18px_54px_rgba(15,23,42,0.10)] backdrop-blur-xl'
-            : 'border-white/60 bg-white/76 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur-lg'
+            ? 'border-[#00F0FF]/15 bg-[#0A0A0A]/90 shadow-[0_18px_54px_rgba(0,240,255,0.05)] backdrop-blur-xl'
+            : 'border-white/10 bg-[#0A0A0A]/40 shadow-[0_14px_40px_rgba(0,0,0,0.2)] backdrop-blur-lg'
         }`}
       >
         <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-3">
-            <div className="icon-shell flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_12px_28px_rgba(15,23,42,0.16)]">
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="icon-shell flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#00F0FF] to-[#0066ff] text-white shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-transform duration-700 group-hover:rotate-[360deg]">
               <Box className="h-5 w-5" strokeWidth={2.4} />
             </div>
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-slate-500">Blue Printing 3D</p>
-              <span className="block text-sm font-bold text-slate-900 sm:text-base">{t('navbar.brand')}</span>
+              <p className="text-lg font-black tracking-tight text-white sm:text-xl">
+                Blue <span className="text-[#00F0FF]">Printing 3D</span>
+              </p>
             </div>
           </a>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-[0_10px_20px_rgba(15,23,42,0.05)]">
+            <div className="flex items-center gap-1 rounded-full border border-[#00F0FF]/15 bg-[#111] p-1 shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition-all hover:bg-slate-100 hover:text-slate-900"
+                  className="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition-all hover:bg-[#1A1A1A] hover:text-[#00F0FF]"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
 
-            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-[0_10px_20px_rgba(15,23,42,0.05)]">
+            <div className="flex items-center gap-1 rounded-full border border-[#00F0FF]/15 bg-[#111] p-1 shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
               <button
                 onClick={() => setLanguage('pt')}
                 title="Português"
-                className={`rounded-full p-1.5 transition-all ${isPt ? 'bg-slate-50 shadow-sm ring-1 ring-slate-200' : 'opacity-60 hover:opacity-100'}`}
+                className={`rounded-full p-1.5 transition-all ${isPt ? 'bg-[#1A1A1A] shadow-sm ring-1 ring-[#00F0FF]/40' : 'opacity-60 hover:opacity-100'}`}
               >
                 <FlagBR />
               </button>
               <button
                 onClick={() => setLanguage('en')}
                 title="English"
-                className={`rounded-full p-1.5 transition-all ${!isPt ? 'bg-slate-50 shadow-sm ring-1 ring-slate-200' : 'opacity-60 hover:opacity-100'}`}
+                className={`rounded-full p-1.5 transition-all ${!isPt ? 'bg-[#1A1A1A] shadow-sm ring-1 ring-[#00F0FF]/40' : 'opacity-60 hover:opacity-100'}`}
               >
                 <FlagUS />
               </button>
@@ -127,18 +128,18 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-[0_10px_20px_rgba(15,23,42,0.05)]">
-              <button onClick={() => setLanguage('pt')} className={`rounded-full p-1 ${isPt ? 'bg-slate-50 shadow-sm' : 'opacity-50'}`}>
+            <div className="flex items-center gap-1 rounded-full border border-[#00F0FF]/15 bg-[#111] p-1 shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
+              <button onClick={() => setLanguage('pt')} className={`rounded-full p-1 ${isPt ? 'bg-[#1A1A1A] shadow-sm' : 'opacity-50'}`}>
                 <FlagBR />
               </button>
-              <button onClick={() => setLanguage('en')} className={`rounded-full p-1 ${!isPt ? 'bg-slate-50 shadow-sm' : 'opacity-50'}`}>
+              <button onClick={() => setLanguage('en')} className={`rounded-full p-1 ${!isPt ? 'bg-[#1A1A1A] shadow-sm' : 'opacity-50'}`}>
                 <FlagUS />
               </button>
             </div>
 
             <button
               onClick={() => setIsMobileMenuOpen((open) => !open)}
-              className="rounded-2xl border border-slate-200 bg-white p-3 text-slate-900 shadow-[0_10px_20px_rgba(15,23,42,0.05)] transition-colors hover:bg-slate-50"
+              className="rounded-2xl border border-[#00F0FF]/15 bg-[#111] p-3 text-white shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#1A1A1A]"
             >
               {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -152,18 +153,22 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="overflow-hidden border-t border-slate-200 bg-white lg:hidden"
+              className="overflow-hidden border-t border-[#00F0FF]/15 bg-[#0A0A0A] lg:hidden"
             >
               <div className="space-y-2 px-4 py-4">
                 {navLinks.map((link) => (
-                  <a
+                  <motion.div 
+                    whileHover={{ scale: 1.02, x: 5 }}
                     key={link.name}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-100"
                   >
-                    {link.name}
-                  </a>
+                    <a
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-[#1A1A1A] hover:text-[#00F0FF]"
+                    >
+                      {link.name}
+                    </a>
+                  </motion.div>
                 ))}
                 <Button
                   onClick={() => {

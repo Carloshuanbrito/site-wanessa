@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MessageSquare } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Button from './Button';
@@ -8,71 +8,72 @@ import bgCta from './fotos/fundo/pexels-diva-34925022.jpg';
 const CTA: React.FC = () => {
   const { t } = useTranslation();
 
+  const { scrollYProgress } = useScroll();
+  const glowY = useTransform(scrollYProgress, [0.8, 1], [-100, 100]);
+  const glowScale = useTransform(scrollYProgress, [0.8, 1], [0.8, 1.2]);
+
   return (
-    <section id="contato" className="section-tint-contact px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <section id="contato" className="section-tint-contact relative overflow-hidden px-4 py-32 sm:px-6 lg:px-8">
+      {/* Dynamic Background Glows */}
+      <motion.div 
+        style={{ y: glowY, scale: glowScale }}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00F0FF]/10 blur-[160px]"
+      />
+      <motion.div 
+        style={{ y: glowY, scale: glowScale }}
+        className="pointer-events-none absolute right-0 top-0 h-[30rem] w-[30rem] rounded-full bg-[#FF5C00]/5 blur-[140px]"
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[2.4rem] border border-slate-200 bg-slate-900 px-6 py-16 text-center shadow-[0_24px_70px_rgba(15,23,42,0.16)] md:px-16 md:py-24"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-[3rem] border border-[#00F0FF]/20 bg-[#0A0A0A]/80 px-6 py-16 text-center shadow-[0_40px_100px_rgba(0,0,0,0.6)] backdrop-blur-xl md:px-16 md:py-24"
         >
           <div className="absolute inset-0 z-0">
-            <img src={bgCta} alt="Background Texture" className="h-full w-full object-cover opacity-18 mix-blend-screen blur-[1px]" />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(30,41,59,0.88))]" />
+            <img src={bgCta} alt="Background Texture" className="h-full w-full object-cover opacity-20 mix-blend-overlay blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A]/95 via-[#0A0A0A]/90 to-transparent" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-3xl">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-slate-300">Contato comercial</p>
             <h2 className="mb-6 text-4xl font-black tracking-[-0.04em] text-white md:text-6xl">
               {t('cta.title')} <br className="hidden md:block" />
-              <span className="text-brand-300">{t('cta.title_highlight')}</span>
+              <span className="text-[#00F0FF]">{t('cta.title_highlight')}</span>
             </h2>
 
             <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300">
               {t('cta.desc')}
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:items-stretch xl:flex-row xl:justify-center">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button
                 onClick={() => {
                   window.location.href = 'mailto:contato@aditivemaintenance.com.br';
                 }}
                 variant="primary"
-                className="group w-full justify-center px-8 py-4 text-base xl:w-auto"
+                className="group w-full justify-center px-10 py-5 text-lg sm:w-auto"
               >
                 <span className="flex items-center gap-2">
                   {t('cta.btn_quote')}
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Button>
 
               <a
-                href="https://wa.me/5585999999999"
+                href="https://wa.me/5585997629938"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-3 rounded-[1.3rem] border border-white/10 bg-white/8 px-6 py-4 text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/12"
+                className="flex items-center justify-center gap-4 rounded-[1.4rem] border border-[#00F0FF]/20 bg-[#111]/60 px-8 py-5 text-white backdrop-blur-md transition-all hover:-translate-y-1 hover:bg-[#00F0FF]/10 hover:border-[#00F0FF]/40 sm:max-w-[320px]"
               >
-                <div className="icon-shell flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white">
-                  <MessageSquare size={18} strokeWidth={2.2} />
+                <div className="icon-shell flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1A1A1A] text-[#00F0FF] shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+                  <MessageSquare size={20} strokeWidth={2.4} />
                 </div>
                 <div className="text-left">
-                  <div className="font-bold">WhatsApp</div>
-                  <div className="text-xs text-slate-300">Resposta rápida em horário comercial</div>
-                </div>
-              </a>
-
-              <a
-                href="tel:+5585999999999"
-                className="flex flex-1 items-center justify-center gap-3 rounded-[1.3rem] border border-white/10 bg-white/8 px-6 py-4 text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/12"
-              >
-                <div className="icon-shell flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
-                </div>
-                <div className="text-left">
-                  <div className="font-bold">+55 (85) 99999-9999</div>
-                  <div className="text-xs text-slate-300">Contato direto por ligação</div>
+                  <div className="font-bold text-lg">WhatsApp</div>
+                  <div className="text-xs text-slate-400">{t('cta.fast_response')}</div>
                 </div>
               </a>
             </div>
@@ -86,10 +87,10 @@ const CTA: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_18px_44px_rgba(15,23,42,0.06)]"
+          className="mt-10 overflow-hidden rounded-[2rem] border border-[#00F0FF]/15 bg-[#0A0A0A] shadow-[0_18px_44px_rgba(0,0,0,0.3)]"
         >
-          <div className="border-b border-slate-200 px-6 py-5">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">{t('cta.map_title')}</p>
+          <div className="border-b border-[#00F0FF]/15 px-6 py-5">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#00F0FF]">{t('cta.map_title')}</p>
           </div>
           <div className="h-80">
             <iframe

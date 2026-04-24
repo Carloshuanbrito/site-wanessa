@@ -10,16 +10,19 @@
         "badge": "Blue Printing 3D",
         "title_main": "Peças",
         "title_gradient": "sob demanda.",
-        "description": "Fabricação para manutenção, reposição e desenvolvimento de peças técnicas. Produzimos sob medida, mesmo para itens difíceis de encontrar no mercado.",
+        "description": "Reduza os seus estoques físicos e trabalhe com entrega rápida. Soluções definitivas e padronizadas em impressão 3D e engenharia para a indústria.",
         "cta_primary": "Iniciar Projeto",
         "cta_secondary": "Ver Materiais",
         "stat_quote": "Cotação",
         "stat_temp": "Temp. Fabr.",
         "stat_quality": "Qualidade",
         "float_card_label": "Material",
-        "float_card_value": "Carbon Fiber",
+        "float_card_value": "Fibra de Carbono",
         "img_label": "Produção Ativa",
-        "img_desc": "Impressão de Polímeros Avançados"
+        "img_desc": "Impressão de Polímeros Avançados",
+        "feature_1": "Produzimos peças técnicas sob demanda a partir de modelo 3D, desenho ou peça física.",
+        "feature_2": "Atendemos desde protótipos até reposição funcional para uso real e continuidade operacional.",
+        "img_footer_desc": "Soluções para manutenção, reposição e desenvolvimento com acabamento visual de alto padrão."
     },
     "materials": {
         "header_title": "Catálogo de",
@@ -103,12 +106,12 @@
             "desc": "Materiais para condições extremas de temperatura e resistência química.",
             "items": [
                 {
-                    "name": "PEEK (Polyether Ether Ketone)",
+                    "name": "PEEK (Poliéter-éter-cetona)",
                     "desc": "O ápice dos polímeros de engenharia, capaz de substituir metais em aplicações críticas.",
                     "properties": [
                         "Resistência mecânica: ⭐⭐⭐⭐⭐ (extremamente alta)",
                         "Temperatura de trabalho: até ~250°C",
-                        "Alta rigidez (pouca deformação)",
+                        "Alta rigidez (baixa deformação)",
                         "Resistência química: ⭐⭐⭐⭐⭐ (ácidos, solventes, combustíveis)",
                         "Excelente resistência ao desgaste",
                         "Baixa absorção de umidade",
@@ -117,15 +120,64 @@
                     "applications": [
                         "Peças próximas a motores ou fontes de calor intenso",
                         "Componentes estruturais críticos",
-                        "Substituição de peças metálicas",
-                        "Indústria naval, óleo & gás, aeroespacial",
+                        "Substituição de metais",
+                        "Indústria Naval, Óleo e Gás, Aeroespacial",
                         "Válvulas, buchas e suportes de alta carga"
                     ]
                 }
             ]
-        }
+        },
+        "comparison": {
+            "label_char": "Característica",
+            "title_proto": "Prototipagem Rápida",
+            "title_eng": "Grau de Engenharia",
+            "labels": [
+                "Resistência mecânica",
+                "Resistência térmica",
+                "Resistência química",
+                "Reforço com fibras (CF/GF)",
+                "Substituição de metais"
+            ],
+            "values": {
+                "low": "Média",
+                "high": "Muito alta a extrema",
+                "t_low": "Até 80°C",
+                "t_high": "120°C a 250°C",
+                "q_low": "Moderada",
+                "q_high": "Alta a extrema"
+            }
+        },
+        "items_desc": {
+            "petg_title": "PETG",
+            "petg_desc": "Prototipagem rápida com excelente acabamento visual e baixo custo.",
+            "nylon_title": "Nylon CF",
+            "nylon_desc": "Reforçado com fibra de carbono para máxima rigidez e resistência mecânica.",
+            "peek_title": "PEEK / Ultem",
+            "peek_desc": "Polímeros de altíssimo desempenho para aplicações aeroespaciais e químicas.",
+            "technical_details": "Detalhes técnicos"
+        },
+        "intelligence": {
+            "title": "Escolha com Inteligência",
+            "desc": "Nossa equipe técnica ajuda você a definir o material ideal baseado em:",
+            "items": [
+                "Carga mecânica e estresse estrutural",
+                "Temperatura de operação contínua",
+                "Exposição a agentes químicos ou solventes",
+                "Necessidade de certificação (UL94-V0, FDA)"
+            ]
+        },
+        "op_tech": {
+            "badge": "Operação Técnica",
+            "desc": "Monitoramento constante para garantir a precisão dimensional."
+        },
+        "footer_btn": "Ver tabela de propriedades",
+        "footer_note": "* As propriedades exatas dependem do polímero específico escolhido."
     },
     "why": {
+        "header_badge": "Excelência Industrial",
+        "header_title": "Sua parceira em",
+        "header_highlight": "Manufatura Estratégica.",
+        "header_desc": "Entregamos mais do que peças: entregamos a segurança de que sua linha de produção não irá parar.",
         "title": "Vantagens e",
         "title_highlight": "Serviços",
         "subtitle": "Soluções definitivas para sua indústria com tecnologia de ponta.",
@@ -145,10 +197,31 @@
             {
                 "title": "Customização",
                 "desc": "Atendimento técnico personalizado."
+            },
+            {
+                "title": "Engenharia Reversa",
+                "desc": "Digitalização e reconstrução de peças."
+            },
+            {
+                "title": "Peças sob demanda",
+                "desc": "Produção conforme necessidade."
+            },
+            {
+                "title": "Impressão Industrial",
+                "desc": "Tecnologia FDM de alta precisão."
+            },
+            {
+                "title": "Materiais Avançados",
+                "desc": "Fibra de carbono, PEEK e Nylon."
             }
         ],
         "adv_title": "Por que nos escolher",
+        "adv_subtitle": "Proposta de valor apresentada com mais contraste e hierarquia.",
         "serv_title": "Nossos Serviços",
+        "commercial_arg": "Cada cartão agora funciona como argumento comercial: fácil de escanear, mais nítido e com presença visual consistente.",
+        "services_title": "Serviços organizados como portfólio premium",
+        "logistics_badge": "Cobertura logística",
+        "logistics_detail": "Atendimento sensível a demandas portuárias e operação crítica.",
         "services": [
             {
                 "title": "Ensaios Mecânicos",
@@ -214,30 +287,34 @@
         "badge": "Múltiplas Aplicações",
         "title": "Aplicações",
         "title_highlight": "",
-        "desc": "Ideal para uso industrial em extrema exigência mecânica e térmica.",
+        "desc": "Soluções voltadas para reposição, continuidade operacional e desenvolvimento rápido de peças sob demanda.",
+        "cta_eval": "Solicitar avaliação do projeto",
+        "real_apps": "Aplicações reais",
+        "industrial_3d": "Impressão 3D industrial",
+        "industrial_3d_desc": "Peças sob demanda para reposição, adaptação e prototipagem funcional.",
         "chart_monitor": "MONITORAMENTO EM TEMPO REAL",
         "chart_stability": "Estabilidade do Extrusor",
         "chart_stable": "Estável",
         "items": [
             {
-                "title": "Reposição Funcional",
-                "desc": "Reposição de peças quebradas."
+                "title": "Reposição de peças quebradas",
+                "desc": "Produção de componentes de reposição para reduzir paradas e retomar a operação."
             },
             {
-                "title": "Disponibilidade",
-                "desc": "Peças descontinuadas."
+                "title": "Peças descontinuadas",
+                "desc": "Alternativa para itens fora de linha ou com baixa disponibilidade no mercado."
             },
             {
-                "title": "Prototipagem Ágil",
-                "desc": "Protótipos funcionais."
+                "title": "Protótipos funcionais",
+                "desc": "Validação rápida de geometrias e desempenho antes da produção final."
             },
             {
-                "title": "Evolução Contínua",
-                "desc": "Adaptações e melhorias."
+                "title": "Adaptações e melhorias",
+                "desc": "Ajustes em peças existentes para adequação, reforço ou ganho funcional."
             },
             {
-                "title": "Customização",
-                "desc": "Ferramentas e suportes personalizados."
+                "title": "Ferramentas e suportes personalizados",
+                "desc": "Soluções sob medida para uso interno, montagem, apoio e operação."
             }
         ]
     },
@@ -247,7 +324,8 @@
         "desc": "Nossa equipe analisa a viabilidade e retorna com o orçamento e sugestão de material ideal.",
         "btn_quote": "Solicitar Cotação",
         "btn_wpp": "WhatsApp",
-        "guarantee": "Resposta garantida em até 24h.",
+        "fast_response": "Resposta rápida",
+        "guarantee": "Resposta garantida em até 24 horas.",
         "map_title": "Localização em Fortaleza"
     },
     "footer": {

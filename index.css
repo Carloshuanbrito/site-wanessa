@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-scroll: scroll 40s linear infinite;
+  --animate-scroll: scroll 80s linear infinite;
 
   @keyframes scroll {
     from { transform: translateX(0); }
@@ -11,13 +11,11 @@
 
 :root {
   color-scheme: light;
-  --page-bg:
-    radial-gradient(circle at top left, rgba(148, 163, 184, 0.08), transparent 28%),
-    linear-gradient(180deg, #fafafa 0%, #f8fafc 36%, #f1f5f9 100%);
-  --panel-border: rgba(148, 163, 184, 0.16);
-  --panel-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-  --strong-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
-  --liquid-stroke: rgba(255, 255, 255, 0.46);
+  --page-bg: #0A0A0A;
+  --panel-border: rgba(0, 240, 255, 0.15);
+  --panel-shadow: 0 24px 60px rgba(0, 240, 255, 0.05);
+  --strong-shadow: 0 0 0 1px rgba(0, 240, 255, 0.08), inset 0 1px 0 rgba(0, 240, 255, 0.12);
+  --liquid-stroke: rgba(0, 240, 255, 0.2);
 }
 
 html {
@@ -28,7 +26,7 @@ body {
   margin: 0;
   min-width: 320px;
   background: var(--page-bg);
-  color: #0f172a;
+  color: #f8fafc;
   font-family: "Manrope", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -52,12 +50,12 @@ h6 {
 }
 
 ::selection {
-  background: rgba(2, 132, 199, 0.14);
-  color: #0f172a;
+  background: rgba(0, 240, 255, 0.2);
+  color: #ffffff;
 }
 
 .animate-scroll {
-  animation: scroll 40s linear infinite;
+  animation: scroll 80s linear infinite;
 }
 
 @keyframes scroll {
@@ -81,6 +79,100 @@ h6 {
   50% { transform: translate3d(0, -8px, 0); }
 }
 
+@keyframes grid-3d {
+  0% { transform: translateY(0) rotateX(15deg) scale(1); }
+  50% { transform: translateY(-10px) rotateX(20deg) scale(1.02); }
+  100% { transform: translateY(0) rotateX(15deg) scale(1); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.bg-grid-3d {
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+}
+
+.animate-grid-3d {
+  animation: grid-3d 8s ease-in-out infinite;
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+  animation: scanline 4s linear infinite;
+}
+
+@keyframes build-3d {
+  0% { clip-path: inset(100% 0 0 0); opacity: 0; filter: brightness(2) cyan; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; filter: brightness(1) none; }
+}
+
+@keyframes border-trace {
+  0%, 100% { clip-path: inset(0 0 98% 0); }
+  25% { clip-path: inset(0 98% 0 0); }
+  50% { clip-path: inset(98% 0 0 0); }
+  75% { clip-path: inset(0 0 0 98%); }
+}
+
+.animate-build-3d {
+  animation: build-3d 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.border-glow-trace {
+  position: absolute;
+  inset: -1px;
+  border: 2px solid #00F0FF;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.group:hover .border-glow-trace {
+  opacity: 1;
+  animation: border-trace 4s linear infinite;
+}
+
+@keyframes float-nozzle {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(100%, 0); }
+  50% { transform: translate(100%, 100%); }
+  75% { transform: translate(0, 100%); }
+  100% { transform: translate(0, 0); }
+}
+
+.nozzle-glow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #00F0FF;
+  border-radius: full;
+  filter: blur(4px);
+  box-shadow: 0 0 15px #00F0FF;
+  z-index: 50;
+  animation: float-nozzle 10s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
 .animate-on-scroll {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -91,21 +183,21 @@ h6 {
 
 .glass-panel {
   border: 1px solid var(--panel-border);
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--panel-shadow);
+  background: rgba(10, 10, 10, 0.86);
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.08), inset 0 1px 0 rgba(0, 240, 255, 0.12), var(--panel-shadow);
   backdrop-filter: blur(14px);
 }
 
 .dark-panel {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(30, 41, 59, 0.94), rgba(15, 23, 42, 0.98));
-  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.4);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.94), rgba(10, 10, 10, 0.98));
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.08), inset 0 1px 0 rgba(0, 240, 255, 0.12), 0 30px 80px rgba(0, 240, 255, 0.05);
   backdrop-filter: blur(16px);
 }
 
 .surface-strong {
-  border: 1px solid rgba(255, 255, 255, 0.68);
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  background: rgba(10, 10, 10, 0.92);
   box-shadow: var(--strong-shadow);
   backdrop-filter: blur(16px);
 }
@@ -114,11 +206,11 @@ h6 {
   position: relative;
   border: 1px solid var(--liquid-stroke);
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.12)),
-    radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent 42%);
+    linear-gradient(180deg, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)),
+    radial-gradient(circle at top left, rgba(0, 240, 255, 0.05), transparent 42%);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.28),
-    0 14px 38px rgba(15,23,42,0.08);
+    inset 0 1px 0 rgba(0, 240, 255, 0.1),
+    0 14px 38px rgba(0, 240, 255, 0.05);
   backdrop-filter: blur(18px) saturate(112%);
 }
 
@@ -135,14 +227,13 @@ h6 {
 .section-tint-services,
 .section-tint-materials,
 .section-tint-contact {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.72), rgba(248,250,252,0.88));
+  background: #0A0A0A;
 }
 
 .section-tint-apps {
   background:
-    radial-gradient(circle at top right, rgba(148,163,184,0.12), transparent 20%),
-    linear-gradient(180deg, rgba(15,23,42,0.96), rgba(15,23,42,0.99));
+    radial-gradient(circle at top right, rgba(0, 240, 255, 0.05), transparent 20%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.96), rgba(10, 10, 10, 0.99));
 }
 
 .icon-shell {
