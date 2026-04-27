@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LogoMarquee from './components/LogoMarquee';
@@ -15,6 +15,15 @@ import PerspectiveSection from './components/PerspectiveSection';
 import './index.css';
 
 function App() {
+  useEffect(() => {
+    // Evitar que o navegador restaure a posição de rolagem
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    // Forçar a rolagem para o topo assim que o app for montado
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-[#00F0FF] selection:text-white">
       <ReadingProgress />

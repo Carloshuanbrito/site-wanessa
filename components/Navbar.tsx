@@ -68,15 +68,26 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
-      <div
-        className={`mx-auto max-w-7xl rounded-[1.75rem] border transition-all duration-300 ${
-          isScrolled
-            ? 'border-[#00F0FF]/15 bg-[#0A0A0A]/90 shadow-[0_18px_54px_rgba(0,240,255,0.05)] backdrop-blur-xl'
-            : 'border-white/10 bg-[#0A0A0A]/40 shadow-[0_14px_40px_rgba(0,0,0,0.2)] backdrop-blur-lg'
-        }`}
-      >
-        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+        isScrolled
+          ? 'bg-[#0A0A0A]/25 backdrop-blur-md shadow-[0_4px_30px_rgba(0,240,255,0.05)]'
+          : 'bg-transparent'
+      }`}
+    >
+      {/* Animated Glowing Border on Scroll */}
+      <motion.div
+        className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-[#00F0FF] to-transparent origin-center"
+        initial={{ scaleX: 0, opacity: 0 }}
+        animate={{ scaleX: isScrolled ? 1 : 0, opacity: isScrolled ? 1 : 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      />
+
+      <div className="mx-auto max-w-7xl">
+        <div className="flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <a href="#" className="flex items-center gap-3 group">
             <div className="icon-shell flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#00F0FF] to-[#0066ff] text-white shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-transform duration-700 group-hover:rotate-[360deg]">
               <Box className="h-5 w-5" strokeWidth={2.4} />
@@ -90,14 +101,19 @@ const Navbar: React.FC = () => {
 
           <div className="hidden items-center gap-3 lg:flex">
             <div className="flex items-center gap-1 rounded-full border border-[#00F0FF]/15 bg-[#111] p-1 shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
-              {navLinks.map((link) => (
-                <a
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
-                  className="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition-all hover:bg-[#1A1A1A] hover:text-[#00F0FF]"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + i * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:bg-[#1A1A1A] hover:text-[#00F0FF]"
                 >
                   {link.name}
-                </a>
+                </motion.a>
               ))}
             </div>
 
@@ -153,9 +169,9 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="overflow-hidden border-t border-[#00F0FF]/15 bg-[#0A0A0A] lg:hidden"
+              className="overflow-hidden border-t border-[#00F0FF]/15 bg-[#0A0A0A]/80 backdrop-blur-xl lg:hidden"
             >
-              <div className="space-y-2 px-4 py-4">
+              <div className="space-y-2 px-4 py-4 sm:px-6">
                 {navLinks.map((link) => (
                   <motion.div 
                     whileHover={{ scale: 1.02, x: 5 }}
@@ -185,7 +201,7 @@ const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
